@@ -4,6 +4,8 @@
 body{
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -12,10 +14,8 @@ body{
 }
 header{
     margin: 0;
-    color: black;
-    background: rgb(37,108,208);
-    background: linear-gradient(90deg, rgba(37,108,208,0.9136029411764706) 0%, rgba(255,205,0,0.7231267507002801) 21%, rgba(91,199,198,0.7035189075630253) 81%);
-    opacity: 0.5;
+    padding: 0;
+    background-color: white;
 }
 h1{
     margin: 0;
@@ -23,15 +23,10 @@ h1{
     text-align: center;
 }
 #homeTitle{
+    margin: 0;
+    padding: 10px;
     font-size: 2.5em;
     text-align: center;
-    background-color: rgba(0, 0, 0, 1); /* Fekete, 50%-os átlátszóság */
-    color: white; /* Fehér szöveg */
-    padding: 10px;
-    border-radius: 5px;
-    opacity: 1;
-    text-shadow: 2px 2px rgba(0, 0, 0, 1); /* Árnyék */
-    font-size: 3em; /* Nagyobb méret */
     font-weight: bold;
 }
 h5{
@@ -41,6 +36,13 @@ h5{
 h6{
     margin: 0;
     padding: 0;
+}
+.navbar{
+    margin: 0;
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 .navbar ul{
     margin: 0;
@@ -60,7 +62,8 @@ h6{
     text-align: center;
 }
 .navbar li:hover{
-    background-color: rgb(63, 124, 209);
+    background-color: rgb(78, 136, 216);
+    transition: 0.5s;
 }
 .navbar a{
     margin: 0;
@@ -76,20 +79,164 @@ h6{
     text-align: center;
     width: 8vw;
 }
+.cartIcon{
+    margin-left: 5px;
+}
 main{
     margin: 0;
     padding: 0;
-    height: 90vh;
+    height: 180vh;
+    flex: 1;
 }
-footer{
+#mainHead{
+    margin: 0;
+    padding: 0;
+    opacity: 1;
+    background-color: white;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+#cartHead{
+    margin: 0;
+    padding: 0;
+    opacity: 1;
+    background-color: white;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+#cartContent{
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    height: 170vh;
+    text-align: center;
+}
+#cartRemoveAllBtn{
+    font-size: 1.3em;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    background: rgb(248, 37, 37);
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline;
+}
+.productsPageTitle{
+    text-align: center;
+    font-weight: bold;
+    font-size: 2em;
+}
+.productsPageNum{
+    text-align: center;
+    font-size: 1.5em;
+}
+.pagination{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    margin-bottom: 50px;
+}
+#moreProductsText{
+    font-size: 1.5em;
+}
+.pagination a{
+    margin-left: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    display: inline-block;
+    background: rgb(37,108,208);
+}
+.pagination a.activePage{
+    background: rgb(132, 157, 190);
+}
+#mainContent{
+    margin-left: 10vw;
+    margin-right: 10vw;
+    padding: 0;
+    background-color: hsl(0, 2%, 89%, 0);
+    height: 170vh;
+}
+.productRow{
+    margin: 0;
+    padding: 1%;
+    height: 45vh;
+    display: flex;
+}
+.productCard{
+    flex: 1;
+    box-shadow: 3px 3px 5px;
+    border-radius: 5px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: hsl(0, 0%, 100%);
+}
+.productCard:hover{
+    transform: scale(1.05);
+    transition: 0.2s;
+}
+.leftProductCard{
+    margin-left: 0;
+}
+.productImg{
+    padding: 1%;
+    height: 200px;
+}
+.productText{
+    padding-top: 10px;
+    padding-left: 10px;
+    text-align: left;
+}
+.productName{
+    padding: 5px;
+    font-size: 1.3em;
+}
+.productPrice{
+    padding: 5px;
+    font-weight: bold;
+    font-size: 1.8em;
+}
+.productNav{
+    align-content: center;
+    text-align: center;
+}
+.intoCartBtn{
+    width: 90%;
+    font-size: 1.8em;
+    background-color: chartreuse;
+    border-radius: 5px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+.intoCartBtn:hover{
+    background-color: rgb(171, 247, 100);
+    transition: 0.5s;
+}
+.footer{
     margin: 0;
     padding: 0;
     min-height: 10vh;
+    width: 100%;
     background: rgb(37,108,208);
     opacity: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    text-align: center;
 }
 .contactInfo{
     color: white;
