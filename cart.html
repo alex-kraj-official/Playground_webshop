@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Playground webshop</title>
-    <link rel="stylesheet" href="styles/home.css">
+    <link rel="icon" id="icon">
+    <title>Playground webshop - Kosár</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/cart.css">
 </head>
 <body>
     <header>
@@ -19,7 +21,7 @@
                 <a href="about.html" id="navItem">Rólunk</a>
             </li>
             <li>
-                <a href="products_00.html" id="navItem">Termékek</a>
+                <a href="/products/products_1.html" id="navItem">Termékek</a>
             </li>
             <li>
                 <a href="contact.html" id="navItem">Elérhetőség</a>
@@ -27,16 +29,17 @@
             <li>
                 <a href="cart.html" id="navItem">
                     <span id="cartCounter"></span>
-                    <i class="cartIcon fa-solid fa-cart-shopping fa-1x"></i>
+                    <i class="fa-solid fa-cart-shopping fa-1x" id="cartIcon"></i>
                 </a>
             </li>
         </ul>
     </nav>
     <main>
-        <div id="cartHead">
-            <div class="productsPageTitle">Kosár</div>
+        <div class="cartHead">
+            <div class="pageTitle">Kosár</div>
         </div>
-        <div id="cartContent">
+        <div class="cartContent">
+            <h3 id="yourCartIsEmptyText"></h3>
             <button id="cartRemoveAllBtn">Kosár ürítése</button>
         </div>
     </main>
@@ -48,8 +51,9 @@
             <h6 id="contactData">All rights reserved.</h6>
         </div>
     </footer>
-
-    <script src="cart.js"></script>
+    
+    <script src="/scripts/main.js"></script>
+    <script src="/scripts/cart.js"></script>
     <script src="https://kit.fontawesome.com/f26ceeabaf.js" crossorigin="anonymous"></script>
 </body>
 </html>

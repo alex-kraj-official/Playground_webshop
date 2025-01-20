@@ -1,5 +1,6 @@
 let cartCounter = document.getElementById("cartCounter");
 let cartCounterValue = parseInt(localStorage.getItem("cartCounterValue")) || 0;
+
 let intoCartBtns = document.getElementsByClassName("intoCartBtn");
 
 if(cartCounterValue != 0){

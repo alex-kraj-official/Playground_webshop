@@ -1,0 +1,42 @@
+.cartHead{
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    height: 30vh;
+    padding: 0;
+    margin: 0;
+    
+    opacity: 1;
+    background-color: white;
+}
+.cartContent{
+    height: 170vh;
+    padding: 0;
+    margin: 0;
+
+    text-align: center;
+
+    background-color: white;
+}
+#yourCartIsEmptyText{
+    padding: 0;
+    margin: 0;
+
+    font-weight: normal;
+}
+#cartRemoveAllBtn{
+    display: inline;
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+
+    background: rgb(248, 37, 37);
+
+    font-size: 1.3em;
+
+    cursor: pointer;
+}

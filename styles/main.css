@@ -1,0 +1,137 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: url(/images/background2.jpg);
+}
+header{
+    padding: 0;
+    margin: 0;
+
+    background-color: white;
+}
+h1{
+    padding: 0;
+    margin: 0;
+
+    text-align: center;
+}
+#homeTitle{
+    padding: 10px;
+    margin: 0;
+
+    text-align: center;
+
+    font-size: 2.5em;
+    font-weight: bold;
+}
+h5{
+    padding: 0;
+    margin: 0;
+}
+h6{
+    padding: 0;
+    margin: 0;
+}
+.navbar{
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    padding: 0;
+    margin: 0;
+}
+.navbar ul{
+    overflow: hidden;
+    padding-left: 10vw;
+    margin: 0;
+
+    background: rgb(37,108,208);
+    color: white;
+
+    list-style-type: none;
+}
+.navbar li{
+    padding: 0;
+    margin-top: 0%;
+    margin-right: 0%;
+    margin-bottom: 0%;
+    margin-left: 7vw;
+
+    float: left;
+
+    text-align: center;
+}
+.navbar li:hover{
+    background-color: rgb(78, 136, 216);
+
+    transition: 0.5s;
+}
+.navbar a{
+    display: block;
+    padding-top: 10%;
+    padding-right: 10%;
+    padding-bottom: 10%;
+    padding-left: 10%;
+    margin: 0;
+
+    color: white;
+
+    text-decoration: none;
+}
+#navItem{
+    width: 8vw;
+
+    text-align: center;
+}
+#cartIcon{
+    margin-left: 5px;
+}
+main{
+    flex: 1;
+    height: 180vh;
+    padding: 0;
+    margin: 0;
+}
+.pageTitle{
+    text-align: center;
+
+    font-size: 2em;
+    font-weight: bold;
+}
+.footer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 10vh;
+    padding: 0;
+    margin: 0;
+
+    text-align: center;
+    
+    opacity: 1;
+    background: rgb(37,108,208);
+}
+.contactInfo{
+    text-align: center;
+
+    opacity: 1;
+    color: white;
+}
+#contactData{
+    padding-top: 0.5vh;
+    padding-bottom: 0.5vh;
+}
+#email{
+    color: white;
+
+    text-decoration: none;
+}

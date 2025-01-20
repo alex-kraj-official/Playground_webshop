@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Playground webshop</title>
-    <link rel="stylesheet" href="styles/home.css">
+    <link rel="icon" id="icon">
+    <title>Playground webshop - Termékek 1. oldal</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/products.css">
 </head>
 <body>
     <header>
@@ -13,36 +15,31 @@
     <nav class="navbar">
         <ul>
             <li>
-                <a href="home.html" id="navItem">Kezdőlap</a>
+                <a href="/home.html" id="navItem">Kezdőlap</a>
             </li>
             <li>
-                <a href="about.html" id="navItem">Rólunk</a>
+                <a href="/about.html" id="navItem">Rólunk</a>
             </li>
             <li>
-                <a href="products_00.html" id="navItem">Termékek</a>
+                <a href="/products/products_1.html" id="navItem">Termékek</a>
             </li>
             <li>
-                <a href="contact.html" id="navItem">Elérhetőség</a>
+                <a href="/contact.html" id="navItem">Elérhetőség</a>
             </li>
             <li>
-                <a href="cart.html" id="navItem"><i class="fa-solid fa-cart-shopping fa-1x"></i></a>
+                <a href="/cart.html" id="navItem"><i class="fa-solid fa-cart-shopping fa-1x" id="cartIcon"></i></i></a>
             </li>
         </ul>
     </nav>
     <main>
-        <div id="mainHead">
-            <div class="productsPageTitle">Termékek</div><br>
+        <div class="productsMainHead">
+            <div class="pageTitle">Termékek</div><br>
             <div class="productsPageNum">1. oldal</div>
-            <div class="pagination">
-                <a href="products_00.html" class="activePage">1</a>
-                <a href="products_01.html">2</a>
-                <a href="products_02.html">3</a>
-                <a href="products_03.html">4</a>
-                <a href="products_04.html">5</a>
+            <div class="pagination" id="paginationMain">
             </div>
         </div>
-        <div id="mainContent">
-
+        <div class="productsMainContent">
+            
         </div>
     </main>
     <footer class="footer">
@@ -54,6 +51,8 @@
         </div>
     </footer>
 
+    <script src="/scripts/main.js"></script>
+    <script src="/scripts/products.js"></script>
     <script src="https://kit.fontawesome.com/f26ceeabaf.js" crossorigin="anonymous"></script>
 </body>
 </html>

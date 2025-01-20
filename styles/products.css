@@ -1,0 +1,123 @@
+.productsMainHead{
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    height: 30vh;
+    padding: 0;
+    margin: 0;
+    
+    opacity: 1;
+    background-color: white;
+}
+.productsPageNum{
+    text-align: center;
+
+    font-size: 1.5em;
+}
+.pagination{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    text-align: center;
+
+    margin-bottom: 50px;
+}
+#moreProductsText{
+    font-size: 1.5em;
+}
+.pagination a{
+    display: inline-block;    
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    margin-left: 5px;
+
+    background: rgb(37,108,208);
+    color: white;
+
+    font-weight: bold;
+    text-decoration: none;
+}
+.pagination a.activePage{
+    background: rgb(132, 157, 190);
+}
+.productsMainContent{
+    height: 170vh;
+    padding: 0;
+    margin-right: 10vw;
+    margin-left: 10vw;
+
+    background-color: hsl(0, 2%, 89%, 0);
+}
+.productRow{
+    display: flex;
+    height: 45vh;
+    padding: 1%;
+    margin: 0;
+}
+.productCard{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    border-radius: 5px;
+    margin-left: 10px;
+
+    justify-content: center;
+    text-align: center;
+    
+    background-color: hsl(0, 0%, 100%);
+
+    box-shadow: 3px 3px 5px;
+}
+.productCard:hover{
+    transform: scale(1.05);
+    transition: 0.2s;
+}
+.leftProductCard{
+    margin-left: 0;
+}
+.productImg{
+    height: 200px;
+    padding: 1%;
+}
+.productText{
+    padding-top: 10px;
+    padding-left: 10px;
+
+    text-align: left;
+}
+.productName{
+    padding: 5px;
+
+    font-size: 1.3em;
+}
+.productPrice{
+    padding: 5px;
+
+    font-size: 1.8em;
+    font-weight: bold;
+}
+.productNav{
+    align-content: center;
+    text-align: center;
+}
+.intoCartBtn{
+    width: 90%;
+    border: 1px solid black;
+    border-radius: 5px;
+
+    background-color: chartreuse;
+
+    font-size: 1.8em;
+    
+    cursor: pointer;
+}
+.intoCartBtn:hover{
+    background-color: rgb(171, 247, 100);
+
+    transition: 0.5s;
+}
