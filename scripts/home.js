@@ -10,8 +10,8 @@ else{
     cartCounter.textContent = "";
 }
 
-for (let btn of intoCartBtns) {
-    btn.onclick = function () {
+for (let btn of intoCartBtns){
+    btn.onclick = function(){
         cartCounterValue++;
         cartCounter.textContent = cartCounterValue;
         localStorage.setItem("cartCounterValue", cartCounterValue);
