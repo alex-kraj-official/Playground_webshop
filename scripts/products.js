@@ -1,23 +1,29 @@
-// Generáljuk a productPagePaths tömböt
+const currentProductPageHtmlFile = window.location.pathname;
+const currentProductPageHtmlFilename = currentProductPageHtmlFile.substring(currentProductPageHtmlFile.lastIndexOf('/') + 1);
+const currentProductPageNumber = currentProductPageHtmlFilename.replace('products_', '').replace('.html', '');
+
+// Legeneráljuk a productPagePaths tömböt
 const productPagePaths = [];
 for (let i = 1; i < 6; i++) {
     productPagePaths.push(`/products/products_${i}.html`);
 }
 
 const pagesPagination = document.getElementById("paginationMain");
+let i = 0;
 
 productPagePaths.forEach((path, index) => {
+    i++;
     const link = document.createElement('a');
     link.href = path; // Link célja
     link.textContent = index + 1; // Link szövege
+    if(i == currentProductPageNumber){
+        link.classList = "activeProductPage";
+    }
     //link.classList = "productPageBtn";
     pagesPagination.appendChild(link);
 });
 
 /*
-const currentProductPageHtmlFile = window.location.pathname;
-const currentProductPageHtmlFilename = currentProductPageHtmlFile.substring(currentProductPageHtmlFile.lastIndexOf('/') + 1);
-
 const productPageBtns = document.getElementsByClassName("productPageBtn");
 
 for (let clicked_productPageBtn of productPageBtns) {

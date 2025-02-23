@@ -16,7 +16,7 @@ header{
     padding: 0;
     margin: 0;
 
-    background-color: white;
+    background-color: hsl(0, 0%, 100%);
 }
 h1{
     padding: 0;
@@ -33,11 +33,7 @@ h1{
     font-size: 2.5em;
     font-weight: bold;
 }
-h5{
-    padding: 0;
-    margin: 0;
-}
-h6{
+h2, h3, h4, h5, h6{
     padding: 0;
     margin: 0;
 }
@@ -47,14 +43,15 @@ h6{
     top: 0;
     padding: 0;
     margin: 0;
+
+    background: hsl(215, 70%, 48%);
 }
 .navbar ul{
     overflow: hidden;
     padding-left: 10vw;
     margin: 0;
-
-    background: rgb(37,108,208);
-    color: white;
+    
+    color: hsl(0, 0%, 100%);
 
     list-style-type: none;
 }
@@ -67,11 +64,14 @@ h6{
 
     float: left;
 
+    background: hsl(215, 70%, 48%);
+
     text-align: center;
+
+    transition: 0.8 ease-in-out;
 }
 .navbar li:hover{
-    background-color: rgb(78, 136, 216);
-
+    background-color: hsl(215, 64%, 58%);
     transition: 0.5s;
 }
 .navbar a{
@@ -82,7 +82,7 @@ h6{
     padding-left: 10%;
     margin: 0;
 
-    color: white;
+    color: hsl(0, 0%, 100%);
 
     text-decoration: none;
 }
@@ -91,8 +91,29 @@ h6{
 
     text-align: center;
 }
+#cartIconFull{
+    position: relative;
+}
 #cartIcon{
     margin-left: 5px;
+}
+#cartHover{
+    position: absolute;
+    background: hsl(0, 0%, 84%);
+    top: 100%; /* A #cartIcon alá helyezi */
+    left: 50%; /* Középre igazítja vízszintesen a #cartIcon-hoz */
+    transform: translateX(-50%); /* Pontosan középre igazítja */
+    margin-top: 5px;
+    width: 150%;
+    height: 150%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    border: 1px solid hsl(0, 0%, 0%);
+}
+#cartHoverEmptyText{
+    color: hsl(0, 0%, 0%);
 }
 main{
     flex: 1;
@@ -117,20 +138,20 @@ main{
     text-align: center;
     
     opacity: 1;
-    background: rgb(37,108,208);
+    background: hsl(215, 70%, 48%);
 }
 .contactInfo{
     text-align: center;
 
     opacity: 1;
-    color: white;
+    color: hsl(0, 0%, 100%);
 }
 #contactData{
     padding-top: 0.5vh;
     padding-bottom: 0.5vh;
 }
 #email{
-    color: white;
+    color: hsl(0, 0%, 100%);
 
     text-decoration: none;
 }

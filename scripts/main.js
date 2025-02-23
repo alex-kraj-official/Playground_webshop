@@ -22,3 +22,17 @@ for (let clicked_navItem of navItems) {
     }
 }
 */
+
+const cartIconFull = document.getElementById("cartIconFull");
+const navbarUl = document.getElementById("lol");
+
+// Hover események
+/*
+cartIconFull.addEventListener('mouseenter', () => {
+    navbarUl.style.overflow = "visible";
+});
+
+cartIconFull.addEventListener('mouseleave', () => {
+    navbarUl.style.overflow = "hidden";
+});
+*/
