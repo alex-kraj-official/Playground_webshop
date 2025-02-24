@@ -21,6 +21,9 @@
 
     width: 50%;
 }
+.productCard:last-child {
+    margin-bottom: 60px;
+}
 .productData{
     display: flex;
     text-align: center;

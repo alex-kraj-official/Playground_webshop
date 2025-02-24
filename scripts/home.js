@@ -8,12 +8,6 @@ let intoCartProdImg;
 let intoCartProdName;
 let intoCartProdPrice;
 
-let intoCartProdData = {
-    [intoCartProdId]: [intoCartProdImg, intoCartProdName, intoCartProdPrice]
-};
-
-let storedIntoCartProds = JSON.parse(localStorage.getItem("products")) || {};
-
 if(cartCounterValue != 0){
     cartCounter.textContent = cartCounterValue;
 }
@@ -24,15 +18,27 @@ else{
 for (let btn of intoCartBtns){
     btn.onclick = function(){
         let productCard = this.closest(".productCard"); // A legközelebbi termékkártya
-        intoCartProdId = productCard.id; // Termék azonosítója
-        intoCartProdImg = productCard.querySelector(".productImg").src;
-        intoCartProdName = productCard.querySelector(".productName").textContent;
-        intoCartProdPrice = productCard.querySelector(".productPrice").textContent;
-        storedIntoCartProds[intoCartProdId] = intoCartProdData[intoCartProdId];
-        localStorage.setItem("products", JSON.stringify(storedIntoCartProds));
-
+        let intoCartProdId = productCard.id; // Termék azonosítója
+        let intoCartProdImg = productCard.querySelector(".productImg").src;
+        let intoCartProdName = productCard.querySelector(".productName").textContent;
+        let intoCartProdPrice = productCard.querySelector(".productPrice").textContent;
+    
+        // Itt hozzuk létre az adatokat, nem globálisan fent
+        let intoCartProdData = {
+            [intoCartProdId]: [intoCartProdImg, intoCartProdName, intoCartProdPrice]
+        };
+    
+        let storedIntoCartProds = JSON.parse(localStorage.getItem("products")) || {};
+        if (typeof storedIntoCartProds !== "object") {
+            storedIntoCartProds = {}; // Ha valamiért nem objektum, nullázd ki
+        }
+    
+        storedIntoCartProds[intoCartProdId] = intoCartProdData[intoCartProdId]; // Hozzáadjuk az új adatokat
+        localStorage.setItem("products", JSON.stringify(storedIntoCartProds)); // Frissítjük a localStorage-t
+    
         cartCounterValue++;
         cartCounter.textContent = cartCounterValue;
         localStorage.setItem("cartCounterValue", cartCounterValue);
     };
+    
 }
