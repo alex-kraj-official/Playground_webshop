@@ -3,11 +3,6 @@ let cartCounterValue = parseInt(localStorage.getItem("cartCounterValue")) || 0;
 
 let intoCartBtns = document.getElementsByClassName("intoCartBtn");
 
-let intoCartProdId;
-let intoCartProdImg;
-let intoCartProdName;
-let intoCartProdPrice;
-
 if(cartCounterValue != 0){
     cartCounter.textContent = cartCounterValue;
 }
@@ -15,30 +10,55 @@ else{
     cartCounter.textContent = "";
 }
 
+displayCurrency();
+function displayCurrency(){
+    let productPriceElements = document.getElementsByClassName("productPrice");
+    Array.from(productPriceElements).forEach(productPrice => {
+        productPrice.textContent = productPrice.textContent + " Ft";
+    });
+}
+
 for (let btn of intoCartBtns){
     btn.onclick = function(){
-        let productCard = this.closest(".productCard"); // A legközelebbi termékkártya
-        let intoCartProdId = productCard.id; // Termék azonosítója
-        let intoCartProdImg = productCard.querySelector(".productImg").src;
-        let intoCartProdName = productCard.querySelector(".productName").textContent;
-        let intoCartProdPrice = productCard.querySelector(".productPrice").textContent;
+        let productCard = this.closest(".productCard"); //get the closest productcard to the button clicked
+        let intoCartProdId = productCard.id; //store the id of the clicked product
+        let intoCartProdImg = productCard.querySelector(".productImg").src; //store the image of the clicked product
+        let intoCartProdName = productCard.querySelector(".productName").textContent; //store the name of the clicked product
+        let intoCartProdPrice = productCard.querySelector(".productPrice").textContent.split(" ")[0]; //store the price of the clicked product
+
+        let storedIntoCartProds = JSON.parse(localStorage.getItem("products")) || {};
+
+        if (storedIntoCartProds[intoCartProdId]){
+            storedIntoCartProds[intoCartProdId].quantity += 1;
+        }
+        else{
+            storedIntoCartProds[intoCartProdId] = {
+                img: intoCartProdImg,
+                name: intoCartProdName,
+                price: intoCartProdPrice,
+                quantity: 1
+            };
+        }
     
-        // Itt hozzuk létre az adatokat, nem globálisan fent
+        /*
         let intoCartProdData = {
             [intoCartProdId]: [intoCartProdImg, intoCartProdName, intoCartProdPrice]
         };
     
         let storedIntoCartProds = JSON.parse(localStorage.getItem("products")) || {};
-        if (typeof storedIntoCartProds !== "object") {
-            storedIntoCartProds = {}; // Ha valamiért nem objektum, nullázd ki
+        if (typeof storedIntoCartProds !== "object"){
+            storedIntoCartProds = {};
         }
     
-        storedIntoCartProds[intoCartProdId] = intoCartProdData[intoCartProdId]; // Hozzáadjuk az új adatokat
-        localStorage.setItem("products", JSON.stringify(storedIntoCartProds)); // Frissítjük a localStorage-t
+        storedIntoCartProds[intoCartProdId] = intoCartProdData[intoCartProdId];
+        localStorage.setItem("products", JSON.stringify(storedIntoCartProds));
+        */
+
+        // Frissített kosár elmentése
+        localStorage.setItem("products", JSON.stringify(storedIntoCartProds));
     
         cartCounterValue++;
         cartCounter.textContent = cartCounterValue;
         localStorage.setItem("cartCounterValue", cartCounterValue);
-    };
-    
+    };    
 }

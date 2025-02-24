@@ -40,13 +40,43 @@
     <main>
         <div class="cartHead">
             <div class="pageTitle">Kosár</div>
+            <h3 id="yourCartIsEmptyText"></h3>
         </div>
         <div class="cartContent">
-            <h3 id="yourCartIsEmptyText"></h3>
-            <div class="cartProds" id="cartContainer">
-                
+            <div class="cartContentHead" id="cartContentHead">
+                <table class="cartContentHeadTable">
+                    <thead>
+                        <tr id="cartTableRow">
+                            <th class="cartTableItem" id="cartTableItem_item">Tétel</th>
+                            <th class="cartTableItem" id="cartTableItem_description">Leírás</th>
+                            <th class="cartTableItem cartTableItem_fillerRight10"></th>
+                            <th class="cartTableItem cartTableItem_fillerLeft10"></th>
+                            <th class="cartTableItem" id="cartTableItem_unitPrice">Egységár</th>
+                            <th class="cartTableItem cartTableItem_fillerLeft10"></th>
+                            <th class="cartTableItem" id="cartTableItem_NoItems">Darab</th>
+                            <th class="cartTableItem cartTableItem_fillerLeft10"></th>
+                            <th class="cartTableItem" id="cartTableItem_subtotal">Részösszeg</th>
+                            <th class="cartTableItem" id="cartTableItem_fillerRight5"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><div class="cartProds" id="cartContainer">
+                            <!--<div class="productCard" id="product_01">
+                                <div class="productData">
+                                    <img class="productImg" src="./images/products/01_Sonic_figura.jpg" alt="Sonic figura">
+                                    <div class="productText">
+                                        <div class="productName">Sonic figura</div>
+                                        <div class="productPrice">7495 Ft</div>
+                                        <div class="productNoItems">10 db</div>
+                                        <div class="productSubtotal">74950 Ft</div>
+                                    </div>
+                                </div>
+                            </div>-->
+                        </div></td></tr>
+                    </tbody>
+                </table>
             </div>
-            <button id="cartRemoveAllBtn">Kosár ürítése</button>
+            <span id="cartRemoveAllBtnDiv"><button id="cartRemoveAllBtn">Kosár ürítése</button></span>
         </div>
     </main>
     <footer class="footer">

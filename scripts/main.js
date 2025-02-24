@@ -1,13 +1,23 @@
-const faviconPath = "/images/favicon.png";
-document.getElementById("icon").href = faviconPath;
-
-const backgroundPath = "/images/background.jpg";
-document.body.style.backgroundImage = `url('${backgroundPath}')`;
-
-/*
 let currentHtmlFile = window.location.pathname;
 const currentHtmlPageFilename = currentHtmlFile.substring(currentHtmlFile.lastIndexOf('/') + 1);
 
+loadMainImgs();
+function loadMainImgs(){
+    if(currentHtmlPageFilename.includes("products")){
+        const faviconPath = "../images/favicon.png";
+        const backgroundPath = "../images/background.jpg";
+        document.getElementById("icon").href = faviconPath;
+        document.body.style.backgroundImage = `url('${backgroundPath}')`;
+    }
+    else{
+        const faviconPath = "./images/favicon.png";
+        const backgroundPath = "./images/background.jpg";
+        document.getElementById("icon").href = faviconPath;
+        document.body.style.backgroundImage = `url('${backgroundPath}')`;
+    }
+}
+
+/*
 const navItems = document.getElementsByClassName("navItem");
 
 for (let clicked_navItem of navItems) {
@@ -21,18 +31,4 @@ for (let clicked_navItem of navItems) {
         }
     }
 }
-*/
-
-const cartIconFull = document.getElementById("cartIconFull");
-const navbarUl = document.getElementById("lol");
-
-// Hover események
-/*
-cartIconFull.addEventListener('mouseenter', () => {
-    navbarUl.style.overflow = "visible";
-});
-
-cartIconFull.addEventListener('mouseleave', () => {
-    navbarUl.style.overflow = "hidden";
-});
 */
