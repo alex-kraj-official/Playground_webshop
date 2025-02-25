@@ -20,7 +20,7 @@ function updateCartCartPage(){
     }
     else{ //if there IS any item in the cart (it's not empty)
         yourCartIsEmptyText.textContent = ""; //empty the textcontent of the "your cart is empty" element
-        cartRemoveAllBtnDiv.style.display = "inline"; //display the "empty your cart" button
+        cartRemoveAllBtnDiv.style.display = "flex"; //display the "empty your cart" button
         displayCartItems(); //display items added to the cart
         displayCurrencyCartPage(); //add the currency after unit prices
     }

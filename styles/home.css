@@ -2,10 +2,8 @@
     font-size: 1.5em;
 }
 .homeMainContent{
-    height: 170vh;
+    height: 300vh;
     padding: 0;
     margin-right: 10vw;
     margin-left: 10vw;
-
-    background-color: hsl(0, 2%, 89%, 0);
 }

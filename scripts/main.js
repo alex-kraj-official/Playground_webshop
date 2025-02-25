@@ -17,9 +17,9 @@ loadMainImgs(); //load the favicon and the background image on every page
 function loadMainImgs(){
     if(currentHtmlPageFilename.includes("lol") ? dot = ".." : dot = "."); //check if the current page is a products page and stores the correct No. dots into the path
     faviconPath = `${dot}/images/favicon.png`; //declare the full path of the favicon
-    backgroundPath = `${dot}/images/background.jpg`; //declare the full path of the background image
+    //backgroundPath = `${dot}/images/background.mp4`; //declare the full path of the background image
     document.getElementById("icon").href = faviconPath; //set the favicon
-    document.body.style.backgroundImage = `url('${backgroundPath}')`; //set the background image
+    //document.body.style.backgroundImage = `url('${backgroundPath}')`; //set the background image
 }
 
 //Update the counter next to the cart icon on every page
@@ -35,7 +35,10 @@ function updateCartCounterMain(){
 
 //If a product added to the cart increase the counter next to the cart icon (+updateCartCounterMain function)
 function addAProductToCartMain(){
-    cartCounterValue++; //increase the value of the stored items in the cart
+    addedQuantity = parseInt(localStorage.getItem("addedQuantity"));
+    cartCounterValue += addedQuantity; //increase the value of the stored items in the cart
     cartCounter.textContent = cartCounterValue; //display the new value on the navbar next to the cart icon
     localStorage.setItem("cartCounterValue", cartCounterValue); //set and store the new value between pages
+    addedQuantity = 1;
+    localStorage.setItem("addedQuantity", addedQuantity);
 }

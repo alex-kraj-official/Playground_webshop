@@ -7,15 +7,28 @@ body{
     padding: 0;
     margin: 0;
 
+    height: 100%;
+    width: 100%;
+
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+#myVideo {
+    object-fit: cover;
+    object-position: center top;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+}
 header{
     padding: 0;
     margin: 0;
-
     background-color: hsl(0, 0%, 100%);
 }
 h1{
@@ -25,7 +38,7 @@ h1{
     text-align: center;
 }
 #homeTitle{
-    padding: 10px;
+    padding: 23px;
     margin: 0;
 
     text-align: center;
@@ -39,10 +52,10 @@ h2, h3, h4, h5, h6{
 }
 .navbar{
     position: sticky;
-    z-index: 1;
     top: 0;
     padding: 0;
     margin: 0;
+    z-index: 1;
 
     background: hsl(215, 70%, 48%);
 }
@@ -121,6 +134,18 @@ main{
     padding: 0;
     margin: 0;
 }
+.mainHead{
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    height: 30vh;
+    padding: 0;
+    margin: 0;
+    
+    opacity: 1;
+    background-color: hsl(0, 0%, 100%);
+}
 .pageTitle{
     text-align: center;
 
@@ -142,7 +167,7 @@ main{
 }
 .contactInfo{
     text-align: center;
-
+    padding: 10px;
     opacity: 1;
     color: hsl(0, 0%, 100%);
 }

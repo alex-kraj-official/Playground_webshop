@@ -28,13 +28,18 @@
         </ul>
     </nav>
     <main>
-        <div class="productsMainHead">
-            <div class="pageTitle">Termékek</div><br>
-            <div class="productsPageNum" id="pageNum"></div>
-            <div class="pagination" id="paginationMain"></div>
-        </div>
-        <div class="productsMainContent" id="productsContent">
-            <div class="productRow" id="productRow"></div>
+        <video playisinline autoplay muted loop poster id="myVideo">
+            <source src="./images/background.mp4" type="video/mp4">
+        </video>
+        <div class="bgVideo">
+            <div class="mainHead">
+                <div class="pageTitle">Termékek</div><br>
+                <div class="productsPageNum" id="pageNum"></div>
+                <div class="pagination" id="paginationMain"></div>
+            </div>
+            <div class="productsMainContent" id="productsContent">
+                <div class="productRow" id="productRow"></div>
+            </div>
         </div>
     </main>
     <footer class="footer">
@@ -97,8 +102,13 @@
                         <div class="productName">${product.title}</div>
                         <div class="productPrice">${product.price}</div>
                     </div>
-                    <div class="productNav">
-                        <button class="intoCartBtn">Kosárba</button>
+                    <div class="newproductNav">
+                        <div class="productQuantity">
+                            <button class="productQuantityChanger Minus"><span class="productQuantityChangerText">-</span></button>
+                            <span class="productQuantityNum"><div class="productQuantityNumTextPlace"><div class="productQuantityNumText">1</div></div></span>
+                            <button class="productQuantityChanger Plus"><span class="productQuantityChangerText">+</span></button>
+                        </div>
+                        <button class="newCartBtn"><i class="fa-solid fa-cart-shopping fa-1x"></i></button>
                     </div>
                 </div>
             </div>
