@@ -4,6 +4,17 @@ table, thead, tr, th{
     border: none;
     border-collapse: collapse;
 }
+.cartMain{
+    min-height: 170vh;
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    background-color: hsl(0, 0%, 100%);
+}
 .cartHead{
     position: relative;
 
@@ -26,17 +37,9 @@ table, thead, tr, th{
     font-weight: normal;
 }
 .cartContent{
-    min-height: 170vh;
-    padding: 0;
-    margin: 0;
-
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-
-    background-color: hsl(0, 0%, 100%);
+    
 }
-.cartContentHead{
+#cartContentInside{
     margin-left: 5px;
 }
 .cartContentHeadTable{
@@ -187,6 +190,12 @@ table, thead, tr, th{
     margin-left: 10px;
     margin-right: 5px;
     width: 150px;
+}
+#cartContentFooter{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
 #cartRemoveAllBtn{
     display: inline;

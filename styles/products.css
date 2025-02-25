@@ -48,7 +48,7 @@
     background: hsl(215, 70%, 70%);
     transition: 0.3s;
 }
-.pagination a.activeProductPage{
+.pagination a#activeProductPage{
     background: hsl(215, 70%, 25%);
 }
 .productsMainContent{
