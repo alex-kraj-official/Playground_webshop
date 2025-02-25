@@ -12,6 +12,13 @@
 }
 .productsPageNum{
     text-align: center;
+    height: 27px;
+
+    font-size: 1.5em;
+}
+#homePageText{
+    text-align: center;
+    height: 27px;
 
     font-size: 1.5em;
 }
@@ -57,7 +64,7 @@
     margin-right: 10vw;
     margin-left: 10vw;
 
-    background-color: hsla(0, 4%, 89%, 0);
+    background-color: hsl(0, 2%, 89%, 0);
 }
 .productRow{
     display: flex;

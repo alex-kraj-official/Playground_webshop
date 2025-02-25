@@ -2,6 +2,9 @@
 const currentHtmlFile = window.location.pathname; //get the full path of the opened html file
 const currentHtmlPageFilename = currentHtmlFile.substring(currentHtmlFile.lastIndexOf('/') + 1); //get the filename of the html file from the full path ("".html)
 
+let faviconPath;
+let backgroundPath;
+
 //No. items in the cart currently
 let cartCounter = document.getElementById("cartCounter"); //declare the element which displays the number of items in the cart
 let cartCounterValue = parseInt(localStorage.getItem("cartCounterValue")) || 0; //get the value which displayed in the cartCounter element (No. items in the cart)
@@ -12,18 +15,11 @@ loadMainImgs(); //load the favicon and the background image on every page
 
 //Load the favicon and the background image on every page
 function loadMainImgs(){
-    if(currentHtmlPageFilename.includes("products")){ //if the loaded/reloaded filename of the page contains "products" meaning the user is on a products page (need bc of the folder system->links, sources are different)
-        const faviconPath = "../images/favicon.png"; //declare the full path of the favicon (product page)
-        const backgroundPath = "../images/background.jpg"; //declare the full path of the background image (product page)
-        document.getElementById("icon").href = faviconPath; //set the favicon (product page)
-        document.body.style.backgroundImage = `url('${backgroundPath}')`; //set the background image (product page)
-    }
-    else{ //if the loaded/reloaded filename of the page NOT contains "products" meaning the user is NOT on a products page
-        const faviconPath = "./images/favicon.png"; //declare the full path of the favicon (NOT a product page)
-        const backgroundPath = "./images/background.jpg"; //declare the full path of the background image (NOT a product page)
-        document.getElementById("icon").href = faviconPath; //set the favicon (NOT a product page)
-        document.body.style.backgroundImage = `url('${backgroundPath}')`; //set the background image (NOT a product page)
-    }
+    if(currentHtmlPageFilename.includes("lol") ? dot = ".." : dot = "."); //check if the current page is a products page and stores the correct No. dots into the path
+    faviconPath = `${dot}/images/favicon.png`; //declare the full path of the favicon
+    backgroundPath = `${dot}/images/background.jpg`; //declare the full path of the background image
+    document.getElementById("icon").href = faviconPath; //set the favicon
+    document.body.style.backgroundImage = `url('${backgroundPath}')`; //set the background image
 }
 
 //Update the counter next to the cart icon on every page

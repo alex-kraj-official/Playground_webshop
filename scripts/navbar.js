@@ -5,12 +5,12 @@ setNavLinks(); //creates the correct navbar links onto the navbar buttons
 
 //Creates the correct navbar links onto the navbar buttons
 function setNavLinks(){
-    if(currentHtmlPageFilename.includes("products") ? dot = ".." : dot = "."); //check if the current page is a products page and stores the correct No. dots into the path
+    if(currentHtmlPageFilename.includes("lol") ? dot = ".." : dot = "."); //check if the current page is a products page and stores the correct No. dots into the path
     //create the correct navLinks
     navLinks = {
         home: `${dot}/home.html`,
         about: `${dot}/about.html`,
-        products: `${dot}/products/products_1.html`,
+        products: `${dot}/products.html`,
         contact: `${dot}/contact.html`,
         cart: `${dot}/cart.html`
     };
