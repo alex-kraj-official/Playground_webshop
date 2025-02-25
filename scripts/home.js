@@ -1,17 +1,7 @@
-let cartCounter = document.getElementById("cartCounter");
-let cartCounterValue = parseInt(localStorage.getItem("cartCounterValue")) || 0;
-
 let intoCartBtns = document.getElementsByClassName("intoCartBtn");
 
-if(cartCounterValue != 0){
-    cartCounter.textContent = cartCounterValue;
-}
-else{
-    cartCounter.textContent = "";
-}
-
-displayCurrency();
-function displayCurrency(){
+displayCurrencyHomePage();
+function displayCurrencyHomePage(){
     let productPriceElements = document.getElementsByClassName("productPrice");
     Array.from(productPriceElements).forEach(productPrice => {
         productPrice.textContent = productPrice.textContent + " Ft";
@@ -39,26 +29,9 @@ for (let btn of intoCartBtns){
                 quantity: 1
             };
         }
-    
-        /*
-        let intoCartProdData = {
-            [intoCartProdId]: [intoCartProdImg, intoCartProdName, intoCartProdPrice]
-        };
-    
-        let storedIntoCartProds = JSON.parse(localStorage.getItem("products")) || {};
-        if (typeof storedIntoCartProds !== "object"){
-            storedIntoCartProds = {};
-        }
-    
-        storedIntoCartProds[intoCartProdId] = intoCartProdData[intoCartProdId];
-        localStorage.setItem("products", JSON.stringify(storedIntoCartProds));
-        */
 
         // Frissített kosár elmentése
         localStorage.setItem("products", JSON.stringify(storedIntoCartProds));
-    
-        cartCounterValue++;
-        cartCounter.textContent = cartCounterValue;
-        localStorage.setItem("cartCounterValue", cartCounterValue);
+        addAProductToCartMain();
     };    
 }
