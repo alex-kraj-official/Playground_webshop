@@ -1,7 +1,7 @@
 const currentProductPageNumber = currentHtmlPageFilename.replace('products_', '').replace('.html', ''); //get the current number of the products page from its filename
 const productPagePaths = []; //it needs to store the correct paths to the products pages
 
-loadProdPagePaths(); //create and store paths to products pages
+//loadProdPagePaths(); //create and store paths to products pages
 
 //Create and store paths to products pages
 function loadProdPagePaths(){

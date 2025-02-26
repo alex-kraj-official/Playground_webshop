@@ -104,29 +104,9 @@ h2, h3, h4, h5, h6{
 
     text-align: center;
 }
-#cartIconFull{
-    position: relative;
-}
 #cartIcon{
+    position: relative;
     margin-left: 5px;
-}
-#cartHover{
-    position: absolute;
-    background: hsl(0, 0%, 84%);
-    top: 100%; /* A #cartIcon alá helyezi */
-    left: 50%; /* Középre igazítja vízszintesen a #cartIcon-hoz */
-    transform: translateX(-50%); /* Pontosan középre igazítja */
-    margin-top: 5px;
-    width: 150%;
-    height: 150%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border-radius: 10px;
-    border: 1px solid hsl(0, 0%, 0%);
-}
-#cartHoverEmptyText{
-    color: hsl(0, 0%, 0%);
 }
 main{
     flex: 1;

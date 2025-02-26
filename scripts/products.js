@@ -17,6 +17,13 @@ function displayCurrencyHomePage(){
 for (let btn of intoCartBtns){
     btn.onclick = function(){
         let productCard = this.closest(".productCard"); //get the closest productcard to the button clicked
+
+        let productNav = productCard.querySelector(".productQuantity");
+        let qElement = productNav.querySelector(".productQuantityNumText");
+        let qProdQuantity = parseInt(qElement.textContent);
+        qProdQuantity = 1;
+        qElement.textContent = qProdQuantity;
+
         let intoCartProdId = productCard.id; //store the id of the clicked product
         let intoCartProdImg = productCard.querySelector(".productImg").src; //store the image of the clicked product
         let intoCartProdName = productCard.querySelector(".productName").textContent; //store the name of the clicked product
@@ -65,3 +72,92 @@ for (let btn of plusQuantityBtns){
         addedQuantity = qProdQuantity;
     }
 }
+
+function resetQuantity(){
+    let productNav = this.closest(".productQuantity");
+    let qElement = productNav.querySelector(".productQuantityNumText");
+    let qProdQuantity = parseInt(qElement.textContent);
+    qProdQuantity += 1;
+    qElement.textContent = qProdQuantity;
+    addedQuantity = qProdQuantity;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Az összes "animateBtn" osztályú gombra rakunk event listenert
+    document.querySelectorAll(".animateBtn").forEach(button => {
+        button.addEventListener("click", (event) => {
+            // Megkeressük a termék kártyát, amin belül a gomb van
+            const productCard = button.closest('.productCard');
+            if (!productCard) return;
+            
+            // A kártyán belül megkeressük a megfelelő képet
+            const image = productCard.querySelector(".imgContainer img");
+            // A target továbbra is ID-val működik
+            const target = document.getElementById("cartIcon");
+            
+            if (!image || !target) return;
+
+            // Get dimensions and positions
+            const imgRect = image.getBoundingClientRect();
+            const targetRect = target.getBoundingClientRect();
+
+            // Create clone
+            const clone = image.cloneNode(true);
+            document.body.appendChild(clone);
+            clone.classList.add("clone");
+
+            // Position clone at the exact starting position in absolute coordinates
+            clone.style.width = `${imgRect.width}px`;
+            clone.style.height = `${imgRect.height}px`;
+            clone.style.position = "fixed";
+            clone.style.left = `${imgRect.left}px`;
+            clone.style.top = `${imgRect.top}px`;
+            clone.style.zIndex = "9999";
+            clone.style.pointerEvents = "none";
+
+            // Számoljuk ki a cél középpontját
+            const targetCenterX = targetRect.left + (targetRect.width / 2);
+            const targetCenterY = targetRect.top + (targetRect.height / 2);
+            
+            // Számoljuk ki, hogy hová kell pozicionálni a klón bal felső sarkát, 
+            // hogy a középpontja a cél középpontjába kerüljön
+            const finalLeft = targetCenterX - (imgRect.width / 2);
+            const finalTop = targetCenterY - (imgRect.height / 2);
+
+            // 1. fázis: Csak mozgás, méretváltozás nélkül (0.25 mp)
+            setTimeout(() => {
+                clone.style.transition = "left 1s ease, top 1s ease";
+                clone.style.left = `${finalLeft}px`;
+                clone.style.top = `${finalTop}px`;
+            }, 10);
+
+            // 2. fázis: Méretcsökkentés és halványítás (0.25 mp után kezdődik)
+            setTimeout(() => {
+                clone.style.transition = "left 0.75s ease, top 0.75s ease, opacity 0.75s ease, transform 0.75s ease";
+                clone.style.opacity = "0";
+                clone.style.transform = "scale(0.3)";
+            }, 260);  // 10ms + 250ms késleltetés
+
+            // Eltávolítás az animáció befejezése után
+            setTimeout(() => {
+                clone.remove();
+            }, 1010);  // 10ms + 1000ms (teljes animáció)
+        });
+    });
+});

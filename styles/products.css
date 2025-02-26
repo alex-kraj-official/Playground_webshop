@@ -245,3 +245,29 @@
     background-color: hsl(76, 100%, 50%);
     transition: 0.1s;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.clone {
+    position: fixed;
+    z-index: 9999;
+    pointer-events: none;
+}

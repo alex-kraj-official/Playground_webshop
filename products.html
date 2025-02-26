@@ -97,7 +97,9 @@
         productsContent.innerHTML = currentPageProducts.map(product => `
             <div class="productCard" id="${product.altid}">
                 <div class="productData">
-                    <img class="productImg" src="${product.img}">
+                    <div class="imgContainer">
+                        <img class="productImg img" src="${product.img}" alt="${product.title}">
+                    </div>
                     <div class="productText">
                         <div class="productName">${product.title}</div>
                         <div class="productPrice">${product.price}</div>
@@ -108,7 +110,7 @@
                             <span class="productQuantityNum"><div class="productQuantityNumTextPlace"><div class="productQuantityNumText">1</div></div></span>
                             <button class="productQuantityChanger Plus"><span class="productQuantityChangerText">+</span></button>
                         </div>
-                        <button class="newCartBtn"><i class="fa-solid fa-cart-shopping fa-1x"></i></button>
+                        <button class="newCartBtn animateBtn"><i class="fa-solid fa-cart-shopping fa-1x"></i></button>
                     </div>
                 </div>
             </div>
