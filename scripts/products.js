@@ -1,7 +1,10 @@
-const minusQuantityBtns = document.getElementsByClassName("Minus");
-const plusQuantityBtns = document.getElementsByClassName("Plus");
-let addedQuantity = parseInt(localStorage.getItem("cartCounterValue"));
+const minusQuantityBtns = document.getElementsByClassName("Minus"); //get all minus quantity changer buttons
+const plusQuantityBtns = document.getElementsByClassName("Plus"); //get all plus quantity changer buttons
+let addedQuantity = 1;
 const intoCartBtns = document.getElementsByClassName("newCartBtn"); //get all into cart buttons
+
+let cartSumValValValue = parseInt(localStorage.getItem("cartSumValValValue")); //get the total amount from localstorage
+let cartFinValValValue = parseInt(localStorage.getItem("cartFinValValValue")); //get the final amount from localstorage
 
 displayCurrencyHomePage(); //display the currency after unit price values
 
@@ -16,24 +19,24 @@ function displayCurrencyHomePage(){
 //Create function if an into cart button is clicked (put the item to the cart)
 for (let btn of intoCartBtns){
     btn.onclick = function(){
-        let productCard = this.closest(".productCard"); //get the closest productcard to the button clicked
+        let productCard = this.closest(".productCard"); //get the closest productCard to the button clicked
 
-        let productNav = productCard.querySelector(".productQuantity");
-        let qElement = productNav.querySelector(".productQuantityNumText");
-        let qProdQuantity = parseInt(qElement.textContent);
-        qProdQuantity = 1;
-        qElement.textContent = qProdQuantity;
+        //Reset the quantity number of the added product
+        let productNav = productCard.querySelector(".productQuantity"); //get the productNav section of the clicked minus button
+        let qElement = productNav.querySelector(".productQuantityNumText"); //get the element which contains the displayed quantity of the product
+        let qProdQuantity = parseInt(qElement.textContent); //store the textContent of the element which contains the displayed quantity of the product as a number
+        qProdQuantity = 1; //reset the quantity number to 1
+        qElement.textContent = qProdQuantity; //display the new quantity after clicking the cart button
 
+        //Get the data of the added product
         let intoCartProdId = productCard.id; //store the id of the clicked product
         let intoCartProdImg = productCard.querySelector(".productImg").src; //store the image of the clicked product
         let intoCartProdName = productCard.querySelector(".productName").textContent; //store the name of the clicked product
         let intoCartProdPrice = productCard.querySelector(".productPrice").textContent.split(" ")[0]; //store the price of the clicked product
 
+        //Store the data of the added product
         let storedIntoCartProds = JSON.parse(localStorage.getItem("products")) || {}; //get the already added products from localstorage
-
-        if(addedQuantity==0 ? addedQuantity = 1 : addedQuantity = addedQuantity);
-
-        if (storedIntoCartProds[intoCartProdId]){ //if the added product is already added to the cart once (its quantity is >0)
+        if (storedIntoCartProds[intoCartProdId]){ //if the added product is already added to the cart once (its quantity is > 0)
             storedIntoCartProds[intoCartProdId].quantity += addedQuantity; //then don't create a new copy instead just increase the quantity by 1
         }
         else{ //if the currently added product isn't added already to the cart (its quantity is 0)
@@ -45,41 +48,41 @@ for (let btn of intoCartBtns){
             };
         }
 
+        cartSumValValValue += intoCartProdPrice * addedQuantity;
+        cartFinValValValue += intoCartProdPrice * addedQuantity;
+        localStorage.setItem("cartSumValValValue", cartSumValValValue);
+        localStorage.setItem("cartFinValValValue", cartFinValValValue);
+
         localStorage.setItem("products", JSON.stringify(storedIntoCartProds)); //save the updated cart with the new product(s) added
-        localStorage.setItem("addedQuantity", addedQuantity);
+        localStorage.setItem("addedQuantity", addedQuantity); //store the added quantity of the product added to the cart, to display the cartCounter on the navbar
         addAProductToCartMain(); //display the changed No. items in the cart
     };    
 }
 
+//Define the behavior of the minus buttons under each product
 for (let btn of minusQuantityBtns){
     btn.onclick = function(){
-        let productNav = this.closest(".productQuantity");
-        let qElement = productNav.querySelector(".productQuantityNumText");
-        let qProdQuantity = parseInt(qElement.textContent);
-        qProdQuantity = Math.max(1, qProdQuantity - 1);
-        qElement.textContent = qProdQuantity;
-        addedQuantity = qProdQuantity;
+        let productNav = this.closest(".productQuantity"); //get the productNav section of the clicked minus button
+        let qElement = productNav.querySelector(".productQuantityNumText"); //get the element which contains the displayed quantity of the product
+        let qProdQuantity = parseInt(qElement.textContent); //store the textContent of the element which contains the displayed quantity of the product as a number
+        qProdQuantity = Math.max(1, qProdQuantity - 1); //the quantity number equals the previous quantity - 1 and can't be less than 1
+        qElement.textContent = qProdQuantity; //display the new quantity after clicking the minus button
+        //addedQuantity declared at (in this) products.js:3
+        addedQuantity = qProdQuantity; //store the new quantity number to get the added quantity number of the product when added to the cart
     }
 }
 
+//Define the behavior of the plus buttons under each product
 for (let btn of plusQuantityBtns){
     btn.onclick = function(){
-        let productNav = this.closest(".productQuantity");
-        let qElement = productNav.querySelector(".productQuantityNumText");
-        let qProdQuantity = parseInt(qElement.textContent);
-        qProdQuantity += 1;
-        qElement.textContent = qProdQuantity;
-        addedQuantity = qProdQuantity;
+        let productNav = this.closest(".productQuantity"); //get the productNav section of the clicked minus button
+        let qElement = productNav.querySelector(".productQuantityNumText"); //get the element which contains the displayed quantity of the product
+        let qProdQuantity = parseInt(qElement.textContent); //store the textContent of the element which contains the displayed quantity of the product as a number
+        qProdQuantity += 1; //the quantity number equals the previous quantity + 1
+        qElement.textContent = qProdQuantity; //display the new quantity after clicking the minus button
+        //addedQuantity declared at (in this) products.js:3
+        addedQuantity = qProdQuantity; //store the new quantity number to get the added quantity number of the product when added to the cart
     }
-}
-
-function resetQuantity(){
-    let productNav = this.closest(".productQuantity");
-    let qElement = productNav.querySelector(".productQuantityNumText");
-    let qProdQuantity = parseInt(qElement.textContent);
-    qProdQuantity += 1;
-    qElement.textContent = qProdQuantity;
-    addedQuantity = qProdQuantity;
 }
 
 

@@ -37,13 +37,17 @@ table, thead, tr, th{
     font-weight: normal;
 }
 .cartContent{
-    
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px;
 }
-#cartContentInside{
-    margin-left: 5px;
+#cartContentProdTableDiv{
+    flex: 0 0 79%;
 }
 .cartContentHeadTable{
-    width: 80%;
+    width: 100%;
 }
 #cartTableRow{
     display: flex;
@@ -132,11 +136,10 @@ table, thead, tr, th{
     width: 100%;
     
     background-color: hsl(0, 0%, 100%);
-
-    box-shadow: 3px 3px 5px;
-
-    transform: scale(1);
-    transition: 0.5s;
+    box-shadow: 0px 0px 1px;
+}
+.productCard:hover{
+    box-shadow: 0px 0px 5px;
 }
 .productData{
     display: flex;
@@ -191,6 +194,128 @@ table, thead, tr, th{
     margin-right: 5px;
     width: 150px;
 }
+.prodDelBtn{
+    display: inline;
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    border: 1px solid hsl(0, 0%, 0%);
+    border-radius: 5px;
+
+    background: hsl(0, 94%, 56%);
+
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#cartContentSumTableDiv{
+    height: 26.25vh;
+    flex: 0 0 19%;
+    margin-left: 21px;
+    margin-bottom: 10px;
+}
+#cartContentSumTableTable{
+    background-color: black;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+}
+.cartContentSumTableTableContent{
+    height: 100%;
+}
+.cartCSumTableRow{
+    align-items: center;
+}
+.cartCSumTableItem{
+    color: white;
+    font-weight: bold;
+}
+.sumTableTxt{
+    text-align: left;
+}
+.sumTableTxtTxt{
+    text-align: left;
+    padding-left: 10px;
+}
+.sumTxt{
+    padding-left: 30px;
+}
+.sumTitRow{
+    height: 30%;
+}
+#cartSumTitTxt{
+    font-size: 2em;
+    width: 100%;
+}
+.sumTextRow{
+    height: 35%;
+}
+.sumVal{
+    text-align: right;
+    padding-right: 30px;
+}
+#cartSumValTxt{
+    font-size: 1.2em;
+}
+#cartFinValTxt{
+    font-size: 1.4em;
+}
+#cartSumValVal{
+    font-size: 1.2em;
+}
+#cartFinValVal{
+    font-size: 1.4em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #cartContentFooter{
     background-color: white;
     display: none;
