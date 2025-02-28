@@ -20,6 +20,9 @@ const cartProdDelBtns = document.getElementsByClassName("prodDelBtn");
 const cartRemoveAllBtnDiv = document.getElementById("cartContentFooter"); //the element which contains cartRemoveAllBtn
 const cartRemoveAllBtn = document.getElementById("cartRemoveAllBtn"); //the element (button) with the customer can empty his/her cart
 
+const cartMinusBtns = document.getElementsByClassName("cartMinusBtn");
+const cartPlusBtns = document.getElementsByClassName("cartPlusBtn");
+
 updateCartCartPage(); //update the info/look of the cart (No. items added, display the empty msg or the empty button and display or hide the prod table)
 
 //Update the info/look of the cart (No. items added, display the empty msg or the empty button and display or hide the prod table)
@@ -41,7 +44,7 @@ function updateCartCartPage(){
     SumNFinVal();
 }
 
-function updateCartCartPageAfterProdDelBtn(){
+function updateCartCartPageAfterClick(){
     if(cartCounterValue == 0){ //if there is NOT any item in the cart (it's empty)
         yourCartIsEmptyText.textContent = "A kosarad jelenleg üres." //display the msg "your cart is empty"
         cartContentMain.style.display = "none";
@@ -67,7 +70,7 @@ function displayCurrencyCartPage(){
 
 //Display items added to the cart
 function displayCartItems() {
-    const prodTable_Body_Table_tbody = document.getElementById("prodTable_Body_Table_tbody"); //the container to display products
+    const prodTable_Table = document.getElementById("prodTable_Table"); //the container to display products
 
     cartCartSumValValValue = 0;
     cartCartFinValValValue = 0;
@@ -76,36 +79,50 @@ function displayCartItems() {
 
     //make array from object and go through it
     Object.entries(storedIntoCartProds).forEach(([productId, product]) => {
-        const productCardRow = document.createElement("tr"); //create productcard div
+        const productCardRow = document.createElement("div"); //create productcard div
         productCardRow.classList.add("productRow"); //add productCard class to the productcard div
         productCardRow.id = productId;
 
         //create a product in html
         productCardRow.innerHTML = `
-                <td class="productImg_td">
+            <div class="productRow_Content">
+                <div class="prodTable_Table_Content_Item productImgDiv">
                     <img class="productImg" src="${product.img}" alt="${product.name}">
-                </td>
-                <td class="productName">${product.name}</td>
-                <td class="productPrice PriceTxt">${product.price}</td>
-                <td class="productNoItems">${product.quantity} db</td>
-                <td class="productSubtotal PriceTxt">${product.price * product.quantity}</td>
-                <td class="prodDelDiv">
+                </div>
+                <div class="prodTable_Table_Content_Item productDescription">${product.name}</div>
+                <div class="productPrice prodTable_Table_Content_Item PriceTxt">${product.price}</div>
+                <div class="productNoItems prodTable_Table_Content_Item">
+                    <div class="cartProdQBtnDiv">
+                        <button class="cartProdQBtn cartMinusBtn">
+                            <div class="cartProdQBtnTxt">-</div>
+                        </button>
+                    </div>
+                    <div class="productQuantity">${product.quantity} db</div>
+                    <div class="cartProdQBtnDiv">
+                        <button class="cartProdQBtn cartPlusBtn">
+                            <div class="cartProdQBtnTxt">+</div>
+                        </button>
+                    </div>
+                </div>
+                <div class="productSubtotal prodTable_Table_Content_Item PriceTxt">${product.price * product.quantity}</div>
+                <div class="prodDelDiv prodTable_Table_Content_Item">
                     <span class="prodDelSpan"><button class="prodDelBtn"><i class="fa-solid fa-trash fa-2x"></i></button></span>
-                </td>
+                </div>
+            </div>
         `;
 
-        prodTable_Body_Table_tbody.appendChild(productCardRow); //add the html element (child) to the end of the cartContainer (parent) div
+        prodTable_Table.appendChild(productCardRow); //add the html element (child) to the end of the cartContainer (parent) div
         index++; //increase the id index of the products to display by 1
     });
 }
 
 function SumNFinVal(){
-    const prodCards = document.getElementsByClassName("productCard");
+    const productRow = document.getElementsByClassName("productRow");
 
     cartCartSumValValValue = 0;
     cartCartFinValValValue = 0;
 
-    for (let product of prodCards)
+    for (let product of productRow)
     {
         let productSubtotal = Number(product.querySelector(".productSubtotal").textContent.split(" ")[0]);
         cartCartSumValValValue += productSubtotal;
@@ -116,12 +133,58 @@ function SumNFinVal(){
     cartFinValVal.textContent = cartCartFinValValValue + " Ft";
 }
 
+for (let btn of cartMinusBtns) {
+    btn.onclick = function(){
+        let productRow = this.closest(".productRow");
+        let prodId = productRow.id;
+        let prodPriceTxt = productRow.querySelector(".productPrice");
+        let prodPriceVal = parseInt(prodPriceTxt.textContent.split(" ")[0]);
+        let prodQTxt = productRow.querySelector(".productQuantity");
+        let prodQVal = parseInt(prodQTxt.textContent.split(" ")[0]);
+        let prodSubTotalTxt = productRow.querySelector(".productSubtotal");
+        let prodSubTotalVal = parseInt(prodSubTotalTxt.textContent.split(" ")[0]);
+        prodQVal = Math.max(1, prodQVal - 1);
+        prodQTxt.textContent = String(prodQVal) + " db";
+        prodSubTotalVal = prodPriceVal * prodQVal + " Ft";
+        prodSubTotalTxt.textContent = prodSubTotalVal;
+        storedIntoCartProds[prodId].quantity = prodQVal;
+        localStorage.setItem("products", JSON.stringify(storedIntoCartProds));
+        updateCartCartPageAfterClick();
+        cartCounterValue = Object.values(JSON.parse(localStorage.getItem("products")) || {}).reduce((sum, prod) => sum + (prod.quantity || 0), 0);
+        localStorage.setItem("cartCounterValue", cartCounterValue);
+        updateCartCounterMain();
+    };
+}
+
+for (let btn of cartPlusBtns) {
+    btn.onclick = function(){
+        let productRow = this.closest(".productRow");
+        let prodId = productRow.id;
+        let prodPriceTxt = productRow.querySelector(".productPrice");
+        let prodPriceVal = parseInt(prodPriceTxt.textContent.split(" ")[0]);
+        let prodQTxt = productRow.querySelector(".productQuantity");
+        let prodQVal = parseInt(prodQTxt.textContent.split(" ")[0]);
+        let prodSubTotalTxt = productRow.querySelector(".productSubtotal");
+        let prodSubTotalVal = parseInt(prodSubTotalTxt.textContent.split(" ")[0]);
+        prodQVal += 1;
+        prodQTxt.textContent = String(prodQVal) + " db";
+        prodSubTotalVal = prodPriceVal * prodQVal + " Ft";
+        prodSubTotalTxt.textContent = prodSubTotalVal;
+        storedIntoCartProds[prodId].quantity = prodQVal;
+        localStorage.setItem("products", JSON.stringify(storedIntoCartProds));
+        updateCartCartPageAfterClick();
+        cartCounterValue = Object.values(JSON.parse(localStorage.getItem("products")) || {}).reduce((sum, prod) => sum + (prod.quantity || 0), 0);
+        localStorage.setItem("cartCounterValue", cartCounterValue);
+        updateCartCounterMain();
+    };
+}
+
 for (let btn of cartProdDelBtns) {
     btn.onclick = function () {
-        let productCard = this.closest(".productCard"); // Legközelebbi productCard keresése
-        let prodId = productCard.id;
-        let productSubtotal = Number(productCard.querySelector(".productSubtotal").textContent.split(" ")[0]);
-        productCard.remove(); // Eltávolítjuk a HTML-ből
+        let productRow = this.closest(".productRow"); // Legközelebbi productCard keresése
+        let prodId = productRow.id;
+        let productSubtotal = Number(productRow.querySelector(".productSubtotal").textContent.split(" ")[0]);
+        productRow.remove(); // Eltávolítjuk a HTML-ből
 
         cartCartSumValValValue -= productSubtotal;
         cartCartFinValValValue -= productSubtotal;
@@ -138,7 +201,7 @@ for (let btn of cartProdDelBtns) {
         localStorage.setItem("cartCounterValue", cartCounterValue);
 
         updateCartCounterMain(); // Frissítjük a számlálót
-        updateCartCartPageAfterProdDelBtn(); // Frissítjük a kosár oldalt
+        updateCartCartPageAfterClick(); // Frissítjük a kosár oldalt
     };
 }
 
