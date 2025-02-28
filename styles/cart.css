@@ -1,8 +1,9 @@
-table, thead, tr, th{
+table, thead, tr, th, td{
+    border-spacing: 0;
+    border-collapse: collapse;
+    border: none;
     margin: 0;
     padding: 0;
-    border: none;
-    border-collapse: collapse;
 }
 .cartMain{
     min-height: 170vh;
@@ -36,6 +37,40 @@ table, thead, tr, th{
 
     font-weight: normal;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .cartContent{
     display: flex;
     flex-direction: row;
@@ -43,104 +78,83 @@ table, thead, tr, th{
     box-sizing: border-box;
     padding: 5px;
 }
-#cartContentProdTableDiv{
+#cartContentMain{
     flex: 0 0 79%;
+    flex-direction: column;
 }
-.cartContentHeadTable{
+
+
+
+
+
+
+#prodTable_Head_Div{
     width: 100%;
-}
-#cartTableRow{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    text-align: center;
-    align-items: center;
-    width: 100%;
-}
-.cartTableItem{
-    color: white;
     background-color: black;
-
-    display: flex;
-    justify-content: center;
-
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+#prodTable_Head_Table{
+    width: 100%;
+}
+#prodTable_Head_Table_thead{
+    
+}
+.prodTable_Head_Table_thItem{
+    color: white;
     padding-top: 5px;
     padding-bottom: 5px;
-    /*padding-left: 20px;
-    padding-right: 75px;*/
 }
-.cartTableItem:first-child{
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    overflow: hidden;
-}
-.cartTableItem:last-child{
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    overflow: hidden;
-}
-#cartTableItem_item{
-    width: 265px;
-    padding-left: 5px;
-    padding-right: 5px;
-}
-#cartTableItem_description{
-    display: flex;
-    flex: 1;
-    margin-right: 10px;
-}
-#cartTableItem_unitPrice{
-    width: 130px;
-    margin-left: 10px;
-}
-.cartTableItem_fillerRight10{
-    width: 10px;
-    height: 28px;
-    margin-left: -10px;
-}
-#cartTableItem_fillerRight5{
-    width: 5px;
-    height: 28px;
-    margin-left: -5px;
-}
-.cartTableItem_fillerLeft10{
-    width: 10px;
-    height: 28px;
-    margin-right: -10px;
-}
-#cartTableItem_NoItems{
-    width: 100px;
-    margin-left: 10px;
-}
-#cartTableItem_subtotal{
-    width: 150px;
-    margin-left: 10px;
-    margin-right: 5px;
-}
-.cartProds{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 15px;
-    margin-top: 10px;
-    margin-bottom: 60px;
-}
-.productCard{
-    border-radius: 5px;
 
-    display: flex;
-    flex: 1;
-    justify-content: left;
-    text-align: center;
+
+
+#prodTable_Body_Div{
+
+}
+#prodTable_Body_Table{
     width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.productRow{
+    border-radius: 5px;
     
     background-color: hsl(0, 0%, 100%);
     box-shadow: 0px 0px 1px;
 }
-.productCard:hover{
+.productRow:hover{
     box-shadow: 0px 0px 5px;
 }
+/*
 .productData{
     display: flex;
     flex-direction: row;
@@ -148,58 +162,35 @@ table, thead, tr, th{
     text-align: center;
     align-items: center;
 }
-.productImg{
+*/
+.productImg_td{
     height: auto;
     width: 265px;
     padding: 5px;
 }
+.productImg{
+    height: auto;
+    width: 265px;
+}
 .productText{
-    display: flex;
-    flex: 1;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
+
 }
 .productName{
     font-size: 1.3em;
-    margin-right: 10px;
-    display: flex;
-    flex: 1;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
 }
 .productPrice{
     font-size: 1.8em;
     font-weight: bold;
-
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-
-    width: 130px;
-    margin-left: 10px;
 }
 .productNoItems{
     font-size: 1.8em;
     font-weight: bold;
-    margin-left: 10px;
-    width: 100px;
 }
 .productSubtotal{
     font-size: 1.8em;
     font-weight: bold;
-    margin-left: 10px;
-    margin-right: 5px;
-    width: 150px;
 }
 .prodDelBtn{
-    display: inline;
-    padding-top: 5px;
-    padding-right: 10px;
-    padding-bottom: 5px;
-    padding-left: 10px;
     border: 1px solid hsl(0, 0%, 0%);
     border-radius: 5px;
 

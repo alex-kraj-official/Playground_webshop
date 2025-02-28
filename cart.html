@@ -6,7 +6,7 @@
     <link rel="icon" id="icon">
     <title>Playground webshop - Kosár</title>
     <link rel="stylesheet" href="./styles/main.css">
-    <link rel="stylesheet" href="./styles/cart.css">
+    <link rel="stylesheet" href="./styles/cart2.css">
     <link rel="stylesheet" href="./assets/fontawesome-free-6.7.2-web/css/all.min.css">
 </head>
 <body>
@@ -33,33 +33,56 @@
             <h3 id="yourCartIsEmptyText"></h3>
         </div>
         <div class="cartContent">
-            <div id="cartContentProdTableDiv"></div>
-            <div id="cartContentSumTableDiv">
-                <table id="cartContentSumTableTable">
-                    <tbody id="cartContentSumTableTableTBody">
-                        <tr class="cartCSumTableRow sumTitRow">
-                            <div class="sumTableTxt">
-                                <td colspan="2" class="cartCSumTableItem sumTableTxtTxt" id="cartSumTitTxt">Rendelési összesítő</td>
+
+
+
+
+
+
+
+
+            <div id="cartContentMain">
+                <div id="prodTable_Div">
+                    <div id="prodTable_Table">
+                        <div id="prodTable_Table_Head">
+                            <div class="prodTable_Table_Head_Item" id="prodTable_Table_Head_Item_img">
+                                <div id="prodTable_Table_Head_Item_img_in">Tétel</div>
                             </div>
-                        </tr>
-                        <tr class="cartCSumTableRow sumTextRow">
-                            <div class="sumTableTxt">
-                                <td class="cartCSumTableItem sumTableTxtTxt sumTxt" id="cartSumValTxt">Összesen</td>
-                            </div>
-                            <div>
-                                <td class="cartCSumTableItem sumVal" id="cartSumValVal"></td>
-                            </div>
-                        </tr>
-                        <tr class="cartCSumTableRow sumTextRow">
-                            <div class="sumTableTxt">
-                                <td class="cartCSumTableItem sumTableTxtTxt sumTxt" id="cartFinValTxt">Végösszeg</td>
-                            </div>
-                            <div>
-                                <td class="cartCSumTableItem sumVal" id="cartFinValVal"></td>
-                            </div>
-                        </tr>
-                    </tbody>
-                </table>
+                            <div class="prodTable_Table_Head_Item" id="prodTable_Table_Head_Item_description">Leírás</div>
+                            <div class="prodTable_Table_Head_Item">Egységár</div>
+                            <div class="prodTable_Table_Head_Item" id="prodTable_Table_Head_Item_quantity">Darab</div>
+                            <div class="prodTable_Table_Head_Item">Részösszeg</div>
+                            <div class="prodTable_Table_Head_Item"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="cartContentSumTableDiv">
+                    <table id="cartContentSumTableTable">
+                        <tbody id="cartContentSumTableTableTBody">
+                            <tr class="cartCSumTableRow sumTitRow">
+                                <div class="sumTableTxt">
+                                    <td colspan="2" class="cartCSumTableItem sumTableTxtTxt" id="cartSumTitTxt">Rendelési összesítő</td>
+                                </div>
+                            </tr>
+                            <tr class="cartCSumTableRow sumTextRow">
+                                <div class="sumTableTxt">
+                                    <td class="cartCSumTableItem sumTableTxtTxt sumTxt" id="cartSumValTxt">Összesen</td>
+                                </div>
+                                <div>
+                                    <td class="cartCSumTableItem sumVal" id="cartSumValVal"></td>
+                                </div>
+                            </tr>
+                            <tr class="cartCSumTableRow sumTextRow">
+                                <div class="sumTableTxt">
+                                    <td class="cartCSumTableItem sumTableTxtTxt sumTxt" id="cartFinValTxt">Végösszeg</td>
+                                </div>
+                                <div>
+                                    <td class="cartCSumTableItem sumVal" id="cartFinValVal"></td>
+                                </div>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
         <div id="cartContentFooter">
@@ -77,6 +100,6 @@
     
     <script src="./scripts/main.js"></script>
     <script src="./scripts/navbar.js"></script>
-    <script src="./scripts/cart.js"></script>
+    <script src="./scripts/cart2.js"></script>
 </body>
 </html>
