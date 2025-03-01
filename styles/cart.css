@@ -184,44 +184,67 @@ table, thead, tr, th, td{
     flex: 1;
     display: flex;
     justify-content: center;
-    justify-items: center;
     text-align: center;
     align-items: center;
     align-self: center;
 }
 .cartProdQBtnDiv{
-    flex: 0.15;
+    flex: 0.25;
     display: flex;
     justify-content: center;
     align-items: center;
+    aspect-ratio: 1 / 1; /* Ez biztosítja, hogy a magasság megegyezzen a szélességgel */
 }
 .cartProdQBtn{
+    flex: 1;
+
+    position: relative;
+    width: 100%;
+
     width: 100%;
     background-color: rgb(156, 103, 41);
+    box-shadow: 0px 0px 0px black;
     border: 1px solid hsl(0, 0%, 0%);
     border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Ez biztosítja, hogy a magasság megegyezzen a szélességgel */
 }
 .cartProdQBtn:hover{
     background-color: rgb(185, 111, 27);
-    transition: 0.1s;
+    box-shadow: 0px 0px 5px black;
 }
-.cartProdQBtnTxt{
-    font-weight: bold;
+.cartProdQBtnTxt {
     display: flex;
-    justify-content: center;
+    justify-content: center;  /* Vízszintes középre */
+    align-items: center;      /* Függőleges középre */
     text-align: center;
-    align-items: center;
-    font-size: 1.5em;
-    vertical-align: middle;
+
+    font-family: 'Courier New', Courier, monospace;   /* Egyenlő szélességű karakterek */
+    font-weight: bold;
+    font-size: 1.8em;
+
+    width: 100%;
+    height: 100%;
+    line-height: 1;
+    padding: 0;
+    margin: 0;
 }
 .productQuantity{
     font-size: 1.8em;
     font-weight: bold;
-    flex: 0.5;
+    flex: 1;
 }
 .productSubtotal{
     font-size: 1.8em;
     font-weight: bold;
+}
+.prodDelDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .prodDelBtn{
     color: black;
@@ -230,17 +253,30 @@ table, thead, tr, th, td{
 
     background: hsl(0, 100%, 50%);
     box-shadow: 0px 0px 0px;
-
-    padding: 15px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     cursor: pointer;
+    width: 35%;
+    aspect-ratio: 1 / 1; /* Ez biztosítja, hogy a magasság megegyezzen a szélességgel */
 }
 .prodDelBtn:hover{
     color: white;
     background-color: hsl(0, 100%, 50%);
     box-shadow: 0px 0px 5px black;
 }
-
+.fa-trash{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    aspect-ratio: 1 / 1; /* Ez biztosítja, hogy a magasság megegyezzen a szélességgel */
+}
 
 
 
@@ -271,7 +307,7 @@ table, thead, tr, th, td{
 
 
 #cartContentSumTableDiv{
-    height: 26.25vh;
+    height: 29vh;
     flex: 0 0 19%;
     margin-left: 21px;
     margin-bottom: 10px;

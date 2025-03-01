@@ -198,7 +198,14 @@
     transition: 0.1s;
 }
 .productQuantityChangerText{
-
+    display: flex;
+    justify-content: center;  /* Vízszintes középre */
+    align-items: center;      /* Függőleges középre */
+    font-family: 'Courier New', Courier, monospace;   /* Egyenlő szélességű karakterek */
+    font-weight: bold;
+    font-size: 1.3em;
+    width: 100%;
+    height: 100%;
 }
 .Minus{
     

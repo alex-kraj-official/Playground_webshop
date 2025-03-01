@@ -94,19 +94,28 @@ function displayCartItems() {
                 <div class="productNoItems prodTable_Table_Content_Item">
                     <div class="cartProdQBtnDiv">
                         <button class="cartProdQBtn cartMinusBtn">
-                            <div class="cartProdQBtnTxt">-</div>
+                            <div class="cartProdQBtnTxt">
+                                <svg width="15" height="15" viewBox="0 0 20 20">
+                                    <line x1="3" y1="10" x2="17" y2="10" stroke="black" stroke-width="2.8"/>
+                                </svg>
+                            </div>
                         </button>
                     </div>
                     <div class="productQuantity">${product.quantity} db</div>
                     <div class="cartProdQBtnDiv">
                         <button class="cartProdQBtn cartPlusBtn">
-                            <div class="cartProdQBtnTxt">+</div>
+                            <div class="cartProdQBtnTxt">
+                                <svg width="15" height="15" viewBox="0 0 20 20">
+                                    <line x1="2" y1="10" x2="18" y2="10" stroke="black" stroke-width="3"/>
+                                    <line x1="10" y1="2" x2="10" y2="18" stroke="black" stroke-width="3"/>
+                                </svg>
+                            </div>
                         </button>
                     </div>
                 </div>
                 <div class="productSubtotal prodTable_Table_Content_Item PriceTxt">${product.price * product.quantity}</div>
                 <div class="prodDelDiv prodTable_Table_Content_Item">
-                    <span class="prodDelSpan"><button class="prodDelBtn"><i class="fa-solid fa-trash fa-2x"></i></button></span>
+                    <button class="prodDelBtn"><i class="fa-solid fa-trash fa-2x"></i></button>
                 </div>
             </div>
         `;
@@ -144,6 +153,7 @@ for (let btn of cartMinusBtns) {
         let prodSubTotalTxt = productRow.querySelector(".productSubtotal");
         let prodSubTotalVal = parseInt(prodSubTotalTxt.textContent.split(" ")[0]);
         prodQVal = Math.max(1, prodQVal - 1);
+        //prodQVal -= 1;
         prodQTxt.textContent = String(prodQVal) + " db";
         prodSubTotalVal = prodPriceVal * prodQVal + " Ft";
         prodSubTotalTxt.textContent = prodSubTotalVal;
