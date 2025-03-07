@@ -6,42 +6,61 @@
     <link rel="icon" id="icon">
     <title>Playground webshop</title>
     <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/navbar/navbar-primary.css">
+    <link rel="stylesheet" href="./styles/navbar/navbar-secondary.css">
+    <link rel="stylesheet" href="./styles/navbar/cart_btn.css">
+    <link rel="stylesheet" href="./styles/navbar/login_btn.css">
     <link rel="stylesheet" href="./styles/products.css">
+    <link rel="stylesheet" href="./styles/mainPCards.css">
     <link rel="stylesheet" href="./styles/home.css">
     <link rel="stylesheet" href="./assets/fontawesome-free-6.7.2-web/css/all.min.css">
 </head>
 <body>
     <header>
-        <h1 id="homeTitle">Playground webshop</h1>
+        <nav class="navbar--primary">
+            <ul>
+                <li class="navbar--primary_li" id="navbar--primary_li-home">
+                    <a href="" id="home-link">
+                        <span id="home_logo-span">
+                            <img id="home_logo-img" src="./images/favicon2.png">
+                        </span>
+                        <span id="home_title-txt">layground webshop</span>
+                    </a>
+                </li>
+                <li id="navbar--primary_filler-li"></li>
+                <li class="navbar--primary_li" id="navbar--primary_li-cart">
+                    <a href="" class="navbar--primary_a" id="cart-link">
+                        <span id="cart_IconandCounter">
+                            <span id="cartCounter_span"><span id="cartCounter"></span></span>
+                            <i class="fa-solid fa-cart-shopping fa-1x" id="cartIcon"></i>
+                        </span>
+                        <span id="cartTxt">Kosár</span>
+                    </a>
+                </li>
+                <li class="navbar--primary_li" id="navbar--primary_li-user">
+                    <a href="" class="navbar--primary_a" id="login-link">
+                        <i class="fa-solid fa-user" id="userIcon"></i>
+                        <span>Bejelentkezés</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <nav class="navbar--secondary">
+            <ul>
+                <!--<li class="navItem"><a href="" id="home-link">Kezdőlap</a></li>-->
+                <li><a href="" id="about-link">Rólunk</a></li>
+                <li><a href="" id="products-link">Termékek</a></li>
+                <li><a href="" id="contact-link">Elérhetőség</a></li>
+            </ul>
+        </nav>
     </header>
-    <nav class="navbar">
-        <ul>
-            <li><a href="" class="navItem" id="home-link">Kezdőlap</a></li>
-            <li><a href="" class="navItem" id="about-link">Rólunk</a></li>
-            <li><a href="" class="navItem" id="products-link">Termékek</a></li>
-            <li><a href="" class="navItem" id="contact-link">Elérhetőség</a></li>
-            <li>
-                <a href="" class="navItem" id="cart-link">
-                    <span id="cartCounter"></span>
-                    <i class="fa-solid fa-cart-shopping fa-1x" id="cartIcon"></i>
-                </a>
-            </li>
-        </ul>
-    </nav>
     <main>
+        <!--
         <video playisinline muted autoplay loop poster id="myVideo">
             <source src="./images/background.mp4" type="video/mp4">
         </video>
+        -->
         <div class="bgVideo">
-            <!--
-                <div class="mainHead">
-                    <div class="pageTitle">Kiemelt termékek</div><br>
-                    <div class="homePageText" id="homePageText">Főoldal</div>
-                    <div class="pagination" id="paginationMain">
-                        <div id="moreProductsText">További termékek:</div><br>
-                    </div>
-                </div>
-            -->
             <div class="homeMainContent">
 
 
@@ -63,18 +82,18 @@
                             </div>
                             <div class="newproductNav">
                                 <div class="productQuantity">
-                                    <button class="productQuantityChanger Minus"><span class="productQuantityChangerText">
+                                    <button class="productQuantityChanger Minus">
                                         <svg width="15" height="15" viewBox="0 0 20 20">
                                             <line x1="3" y1="10" x2="17" y2="10" stroke="black" stroke-width="2.8"/>
                                         </svg>
-                                    </span></button>
-                                    <span class="productQuantityNum"><div class="productQuantityNumTextPlace"><div class="productQuantityNumText">1</div></div></span>
-                                    <button class="productQuantityChanger Plus"><span class="productQuantityChangerText">
+                                    </button>
+                                    <span class="pQNumSpan"><input class="pQNumInput" type="number" value="1"></span>
+                                    <button class="productQuantityChanger Plus">
                                         <svg width="15" height="15" viewBox="0 0 20 20">
                                             <line x1="2" y1="10" x2="18" y2="10" stroke="black" stroke-width="3"/>
                                             <line x1="10" y1="2" x2="10" y2="18" stroke="black" stroke-width="3"/>
                                         </svg>
-                                    </span></button>
+                                    </button>
                                 </div>
                                 <button class="newCartBtn animateBtn"><i class="fa-solid fa-cart-shopping fa-1x"></i></button>
                             </div>
@@ -91,13 +110,13 @@
                             </div>
                             <div class="newproductNav">
                                 <div class="productQuantity">
-                                    <button class="productQuantityChanger Minus"><span class="productQuantityChangerText">
+                                    <button class="productQuantityChanger Minus"><span>
                                         <svg width="15" height="15" viewBox="0 0 20 20">
                                             <line x1="3" y1="10" x2="17" y2="10" stroke="black" stroke-width="2.8"/>
                                         </svg>
                                     </span></button>
-                                    <span class="productQuantityNum"><div class="productQuantityNumTextPlace"><div class="productQuantityNumText">1</div></div></span>
-                                    <button class="productQuantityChanger Plus"><span class="productQuantityChangerText">
+                                    <span class="pQNumSpan"><input class="pQNumInput" type="number" value="1"></span>
+                                    <button class="productQuantityChanger Plus"><span>
                                         <svg width="15" height="15" viewBox="0 0 20 20">
                                             <line x1="2" y1="10" x2="18" y2="10" stroke="black" stroke-width="3"/>
                                             <line x1="10" y1="2" x2="10" y2="18" stroke="black" stroke-width="3"/>
@@ -119,13 +138,13 @@
                             </div>
                             <div class="newproductNav">
                                 <div class="productQuantity">
-                                    <button class="productQuantityChanger Minus"><span class="productQuantityChangerText">
+                                    <button class="productQuantityChanger Minus"><span>
                                         <svg width="15" height="15" viewBox="0 0 20 20">
                                             <line x1="3" y1="10" x2="17" y2="10" stroke="black" stroke-width="2.8"/>
                                         </svg>
                                     </span></button>
-                                    <span class="productQuantityNum"><div class="productQuantityNumTextPlace"><div class="productQuantityNumText">1</div></div></span>
-                                    <button class="productQuantityChanger Plus"><span class="productQuantityChangerText">
+                                    <span class="pQNumSpan"><input class="pQNumInput" type="number" value="1"></span>
+                                    <button class="productQuantityChanger Plus"><span>
                                         <svg width="15" height="15" viewBox="0 0 20 20">
                                             <line x1="2" y1="10" x2="18" y2="10" stroke="black" stroke-width="3"/>
                                             <line x1="10" y1="2" x2="10" y2="18" stroke="black" stroke-width="3"/>
@@ -147,41 +166,13 @@
                             </div>
                             <div class="newproductNav">
                                 <div class="productQuantity">
-                                    <button class="productQuantityChanger Minus"><span class="productQuantityChangerText">
+                                    <button class="productQuantityChanger Minus"><span>
                                         <svg width="15" height="15" viewBox="0 0 20 20">
                                             <line x1="3" y1="10" x2="17" y2="10" stroke="black" stroke-width="2.8"/>
                                         </svg>
                                     </span></button>
-                                    <span class="productQuantityNum"><div class="productQuantityNumTextPlace"><div class="productQuantityNumText">1</div></div></span>
-                                    <button class="productQuantityChanger Plus"><span class="productQuantityChangerText">
-                                        <svg width="15" height="15" viewBox="0 0 20 20">
-                                            <line x1="2" y1="10" x2="18" y2="10" stroke="black" stroke-width="3"/>
-                                            <line x1="10" y1="2" x2="10" y2="18" stroke="black" stroke-width="3"/>
-                                        </svg>
-                                    </span></button>
-                                </div>
-                                <button class="newCartBtn animateBtn"><i class="fa-solid fa-cart-shopping fa-1x"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="productCard" id="4">
-                        <div class="productData">
-                            <div class="imgContainer">
-                                <img class="productImg img" src="./images/products/04_Magyar_rendorauto.png" alt="Magyar rendőrautó">
-                            </div>
-                            <div class="productText">
-                                <div class="productName">Magyar rendőrautó</div>
-                                <div class="productPrice">2395</div>
-                            </div>
-                            <div class="newproductNav">
-                                <div class="productQuantity">
-                                    <button class="productQuantityChanger Minus"><span class="productQuantityChangerText">
-                                        <svg width="15" height="15" viewBox="0 0 20 20">
-                                            <line x1="3" y1="10" x2="17" y2="10" stroke="black" stroke-width="2.8"/>
-                                        </svg>
-                                    </span></button>
-                                    <span class="productQuantityNum"><div class="productQuantityNumTextPlace"><div class="productQuantityNumText">1</div></div></span>
-                                    <button class="productQuantityChanger Plus"><span class="productQuantityChangerText">
+                                    <span class="pQNumSpan"><input class="pQNumInput" type="number" value="1"></span>
+                                    <button class="productQuantityChanger Plus"><span>
                                         <svg width="15" height="15" viewBox="0 0 20 20">
                                             <line x1="2" y1="10" x2="18" y2="10" stroke="black" stroke-width="3"/>
                                             <line x1="10" y1="2" x2="10" y2="18" stroke="black" stroke-width="3"/>
@@ -195,317 +186,6 @@
                 </div>
 
 
-
-
-
-
-
-
-                <div class="productRow">
-                    <div class="productCard" id="0">
-                        <div class="productData">
-                            <div class="imgContainer">
-                                <img class="productImg img" src="./images/products/00_Uno_No_Mercy.png" alt="Uno No Mercy">
-                            </div>
-                            <div class="productText">
-                                <div class="productName">Uno No Mercy</div>
-                                <div class="productPrice">3995</div>
-                            </div>
-                            <div class="newproductNav">
-                                <div class="productQuantity">
-                                    <button class="productQuantityChanger Minus"><span class="productQuantityChangerText">-</span></button>
-                                    <span class="productQuantityNum"><div class="productQuantityNumTextPlace"><div class="productQuantityNumText">1</div></div></span>
-                                    <button class="productQuantityChanger Plus"><span class="productQuantityChangerText">+</span></button>
-                                </div>
-                                <button class="newCartBtn animateBtn"><i class="fa-solid fa-cart-shopping fa-1x"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="productCard" id="1">
-                        <div class="productData">
-                            <div class="imgContainer">
-                                <img class="productImg img" src="./images/products/01_Sonic_figura.jpg" alt="Sonic figura">
-                            </div>
-                            <div class="productText">
-                                <div class="productName">Sonic figura</div>
-                                <div class="productPrice">7495</div>
-                            </div>
-                            <div class="newproductNav">
-                                <div class="productQuantity">
-                                    <button class="productQuantityChanger Minus"><span class="productQuantityChangerText">-</span></button>
-                                    <span class="productQuantityNum"><div class="productQuantityNumTextPlace"><div class="productQuantityNumText">1</div></div></span>
-                                    <button class="productQuantityChanger Plus"><span class="productQuantityChangerText">+</span></button>
-                                </div>
-                                <button class="newCartBtn animateBtn"><i class="fa-solid fa-cart-shopping fa-1x"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="productCard" id="2">
-                        <div class="productData">
-                            <div class="imgContainer">
-                                <img class="productImg img" src="./images/products/02_Gazdalkodj_okosan.png" alt="Gazdálkodj okosan">
-                            </div>
-                            <div class="productText">
-                                <div class="productName">Gazdálkodj okosan</div>
-                                <div class="productPrice">4995</div>
-                            </div>
-                            <div class="newproductNav">
-                                <div class="productQuantity">
-                                    <button class="productQuantityChanger Minus"><span class="productQuantityChangerText">-</span></button>
-                                    <span class="productQuantityNum"><div class="productQuantityNumTextPlace"><div class="productQuantityNumText">1</div></div></span>
-                                    <button class="productQuantityChanger Plus"><span class="productQuantityChangerText">+</span></button>
-                                </div>
-                                <button class="newCartBtn animateBtn"><i class="fa-solid fa-cart-shopping fa-1x"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="productCard" id="3">
-                        <div class="productData">
-                            <div class="imgContainer">
-                                <img class="productImg img" src="./images/products/03_Bugocsiga.png" alt="Búgócsiga">
-                            </div>
-                            <div class="productText">
-                                <div class="productName">Búgócsiga</div>
-                                <div class="productPrice">2995</div>
-                            </div>
-                            <div class="newproductNav">
-                                <div class="productQuantity">
-                                    <button class="productQuantityChanger Minus"><span class="productQuantityChangerText">-</span></button>
-                                    <span class="productQuantityNum"><div class="productQuantityNumTextPlace"><div class="productQuantityNumText">1</div></div></span>
-                                    <button class="productQuantityChanger Plus"><span class="productQuantityChangerText">+</span></button>
-                                </div>
-                                <button class="newCartBtn animateBtn"><i class="fa-solid fa-cart-shopping fa-1x"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="productCard" id="4">
-                        <div class="productData">
-                            <div class="imgContainer">
-                                <img class="productImg img" src="./images/products/04_Magyar_rendorauto.png" alt="Magyar rendőrautó">
-                            </div>
-                            <div class="productText">
-                                <div class="productName">Magyar rendőrautó</div>
-                                <div class="productPrice">2395</div>
-                            </div>
-                            <div class="newproductNav">
-                                <div class="productQuantity">
-                                    <button class="productQuantityChanger Minus"><span class="productQuantityChangerText">-</span></button>
-                                    <span class="productQuantityNum"><div class="productQuantityNumTextPlace"><div class="productQuantityNumText">1</div></div></span>
-                                    <button class="productQuantityChanger Plus"><span class="productQuantityChangerText">+</span></button>
-                                </div>
-                                <button class="newCartBtn animateBtn"><i class="fa-solid fa-cart-shopping fa-1x"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-
-
-
-                <div class="productRow">
-                    <div class="productCard" id="0">
-                        <div class="productData">
-                            <div class="imgContainer">
-                                <img class="productImg img" src="./images/products/00_Uno_No_Mercy.png" alt="Uno No Mercy">
-                            </div>
-                            <div class="productText">
-                                <div class="productName">Uno No Mercy</div>
-                                <div class="productPrice">3995</div>
-                            </div>
-                            <div class="newproductNav">
-                                <div class="productQuantity">
-                                    <button class="productQuantityChanger Minus"><span class="productQuantityChangerText">-</span></button>
-                                    <span class="productQuantityNum"><div class="productQuantityNumTextPlace"><div class="productQuantityNumText">1</div></div></span>
-                                    <button class="productQuantityChanger Plus"><span class="productQuantityChangerText">+</span></button>
-                                </div>
-                                <button class="newCartBtn animateBtn"><i class="fa-solid fa-cart-shopping fa-1x"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="productCard" id="1">
-                        <div class="productData">
-                            <div class="imgContainer">
-                                <img class="productImg img" src="./images/products/01_Sonic_figura.jpg" alt="Sonic figura">
-                            </div>
-                            <div class="productText">
-                                <div class="productName">Sonic figura</div>
-                                <div class="productPrice">7495</div>
-                            </div>
-                            <div class="newproductNav">
-                                <div class="productQuantity">
-                                    <button class="productQuantityChanger Minus"><span class="productQuantityChangerText">-</span></button>
-                                    <span class="productQuantityNum"><div class="productQuantityNumTextPlace"><div class="productQuantityNumText">1</div></div></span>
-                                    <button class="productQuantityChanger Plus"><span class="productQuantityChangerText">+</span></button>
-                                </div>
-                                <button class="newCartBtn animateBtn"><i class="fa-solid fa-cart-shopping fa-1x"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="productCard" id="2">
-                        <div class="productData">
-                            <div class="imgContainer">
-                                <img class="productImg img" src="./images/products/02_Gazdalkodj_okosan.png" alt="Gazdálkodj okosan">
-                            </div>
-                            <div class="productText">
-                                <div class="productName">Gazdálkodj okosan</div>
-                                <div class="productPrice">4995</div>
-                            </div>
-                            <div class="newproductNav">
-                                <div class="productQuantity">
-                                    <button class="productQuantityChanger Minus"><span class="productQuantityChangerText">-</span></button>
-                                    <span class="productQuantityNum"><div class="productQuantityNumTextPlace"><div class="productQuantityNumText">1</div></div></span>
-                                    <button class="productQuantityChanger Plus"><span class="productQuantityChangerText">+</span></button>
-                                </div>
-                                <button class="newCartBtn animateBtn"><i class="fa-solid fa-cart-shopping fa-1x"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="productCard" id="3">
-                        <div class="productData">
-                            <div class="imgContainer">
-                                <img class="productImg img" src="./images/products/03_Bugocsiga.png" alt="Búgócsiga">
-                            </div>
-                            <div class="productText">
-                                <div class="productName">Búgócsiga</div>
-                                <div class="productPrice">2995</div>
-                            </div>
-                            <div class="newproductNav">
-                                <div class="productQuantity">
-                                    <button class="productQuantityChanger Minus"><span class="productQuantityChangerText">-</span></button>
-                                    <span class="productQuantityNum"><div class="productQuantityNumTextPlace"><div class="productQuantityNumText">1</div></div></span>
-                                    <button class="productQuantityChanger Plus"><span class="productQuantityChangerText">+</span></button>
-                                </div>
-                                <button class="newCartBtn animateBtn"><i class="fa-solid fa-cart-shopping fa-1x"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="productCard" id="4">
-                        <div class="productData">
-                            <div class="imgContainer">
-                                <img class="productImg img" src="./images/products/04_Magyar_rendorauto.png" alt="Magyar rendőrautó">
-                            </div>
-                            <div class="productText">
-                                <div class="productName">Magyar rendőrautó</div>
-                                <div class="productPrice">2395</div>
-                            </div>
-                            <div class="newproductNav">
-                                <div class="productQuantity">
-                                    <button class="productQuantityChanger Minus"><span class="productQuantityChangerText">-</span></button>
-                                    <span class="productQuantityNum"><div class="productQuantityNumTextPlace"><div class="productQuantityNumText">1</div></div></span>
-                                    <button class="productQuantityChanger Plus"><span class="productQuantityChangerText">+</span></button>
-                                </div>
-                                <button class="newCartBtn animateBtn"><i class="fa-solid fa-cart-shopping fa-1x"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-
-
-
-                <div class="productRow">
-                    <div class="productCard" id="0">
-                        <div class="productData">
-                            <div class="imgContainer">
-                                <img class="productImg img" src="./images/products/00_Uno_No_Mercy.png" alt="Uno No Mercy">
-                            </div>
-                            <div class="productText">
-                                <div class="productName">Uno No Mercy</div>
-                                <div class="productPrice">3995</div>
-                            </div>
-                            <div class="newproductNav">
-                                <div class="productQuantity">
-                                    <button class="productQuantityChanger Minus"><span class="productQuantityChangerText">-</span></button>
-                                    <span class="productQuantityNum"><div class="productQuantityNumTextPlace"><div class="productQuantityNumText">1</div></div></span>
-                                    <button class="productQuantityChanger Plus"><span class="productQuantityChangerText">+</span></button>
-                                </div>
-                                <button class="newCartBtn animateBtn"><i class="fa-solid fa-cart-shopping fa-1x"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="productCard" id="1">
-                        <div class="productData">
-                            <div class="imgContainer">
-                                <img class="productImg img" src="./images/products/01_Sonic_figura.jpg" alt="Sonic figura">
-                            </div>
-                            <div class="productText">
-                                <div class="productName">Sonic figura</div>
-                                <div class="productPrice">7495</div>
-                            </div>
-                            <div class="newproductNav">
-                                <div class="productQuantity">
-                                    <button class="productQuantityChanger Minus"><span class="productQuantityChangerText">-</span></button>
-                                    <span class="productQuantityNum"><div class="productQuantityNumTextPlace"><div class="productQuantityNumText">1</div></div></span>
-                                    <button class="productQuantityChanger Plus"><span class="productQuantityChangerText">+</span></button>
-                                </div>
-                                <button class="newCartBtn animateBtn"><i class="fa-solid fa-cart-shopping fa-1x"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="productCard" id="2">
-                        <div class="productData">
-                            <div class="imgContainer">
-                                <img class="productImg img" src="./images/products/02_Gazdalkodj_okosan.png" alt="Gazdálkodj okosan">
-                            </div>
-                            <div class="productText">
-                                <div class="productName">Gazdálkodj okosan</div>
-                                <div class="productPrice">4995</div>
-                            </div>
-                            <div class="newproductNav">
-                                <div class="productQuantity">
-                                    <button class="productQuantityChanger Minus"><span class="productQuantityChangerText">-</span></button>
-                                    <span class="productQuantityNum"><div class="productQuantityNumTextPlace"><div class="productQuantityNumText">1</div></div></span>
-                                    <button class="productQuantityChanger Plus"><span class="productQuantityChangerText">+</span></button>
-                                </div>
-                                <button class="newCartBtn animateBtn"><i class="fa-solid fa-cart-shopping fa-1x"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="productCard" id="3">
-                        <div class="productData">
-                            <div class="imgContainer">
-                                <img class="productImg img" src="./images/products/03_Bugocsiga.png" alt="Búgócsiga">
-                            </div>
-                            <div class="productText">
-                                <div class="productName">Búgócsiga</div>
-                                <div class="productPrice">2995</div>
-                            </div>
-                            <div class="newproductNav">
-                                <div class="productQuantity">
-                                    <button class="productQuantityChanger Minus"><span class="productQuantityChangerText">-</span></button>
-                                    <span class="productQuantityNum"><div class="productQuantityNumTextPlace"><div class="productQuantityNumText">1</div></div></span>
-                                    <button class="productQuantityChanger Plus"><span class="productQuantityChangerText">+</span></button>
-                                </div>
-                                <button class="newCartBtn animateBtn"><i class="fa-solid fa-cart-shopping fa-1x"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="productCard" id="4">
-                        <div class="productData">
-                            <div class="imgContainer">
-                                <img class="productImg img" src="./images/products/04_Magyar_rendorauto.png" alt="Magyar rendőrautó">
-                            </div>
-                            <div class="productText">
-                                <div class="productName">Magyar rendőrautó</div>
-                                <div class="productPrice">2395</div>
-                            </div>
-                            <div class="newproductNav">
-                                <div class="productQuantity">
-                                    <button class="productQuantityChanger Minus"><span class="productQuantityChangerText">-</span></button>
-                                    <span class="productQuantityNum"><div class="productQuantityNumTextPlace"><div class="productQuantityNumText">1</div></div></span>
-                                    <button class="productQuantityChanger Plus"><span class="productQuantityChangerText">+</span></button>
-                                </div>
-                                <button class="newCartBtn animateBtn"><i class="fa-solid fa-cart-shopping fa-1x"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
 
 
@@ -514,6 +194,120 @@
 
 
                 
+                <div class="productRow" id="firstProdRow">
+                    <div class="productCard" id="3">
+                        <div class="productData">
+                            <div class="imgContainer">
+                                <img class="productImg img" src="./images/products/03_Bugocsiga.png" alt="Búgócsiga">
+                            </div>
+                            <div class="productText">
+                                <div class="productName">Búgócsiga</div>
+                                <div class="productPrice">2995</div>
+                            </div>
+                            <div class="newproductNav">
+                                <div class="productQuantity">
+                                    <button class="productQuantityChanger Minus"><span>
+                                        <svg width="15" height="15" viewBox="0 0 20 20">
+                                            <line x1="3" y1="10" x2="17" y2="10" stroke="black" stroke-width="2.8"/>
+                                        </svg>
+                                    </span></button>
+                                    <span class="pQNumSpan"><input class="pQNumInput" type="number" value="1"></span>
+                                    <button class="productQuantityChanger Plus"><span>
+                                        <svg width="15" height="15" viewBox="0 0 20 20">
+                                            <line x1="2" y1="10" x2="18" y2="10" stroke="black" stroke-width="3"/>
+                                            <line x1="10" y1="2" x2="10" y2="18" stroke="black" stroke-width="3"/>
+                                        </svg>
+                                    </span></button>
+                                </div>
+                                <button class="newCartBtn animateBtn"><i class="fa-solid fa-cart-shopping fa-1x"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="productCard" id="4">
+                        <div class="productData">
+                            <div class="imgContainer">
+                                <img class="productImg img" src="./images/products/04_Magyar_rendorauto.png" alt="Magyar rendőrautó">
+                            </div>
+                            <div class="productText">
+                                <div class="productName">Magyar rendőrautó</div>
+                                <div class="productPrice">2395</div>
+                            </div>
+                            <div class="newproductNav">
+                                <div class="productQuantity">
+                                    <button class="productQuantityChanger Minus"><span>
+                                        <svg width="15" height="15" viewBox="0 0 20 20">
+                                            <line x1="3" y1="10" x2="17" y2="10" stroke="black" stroke-width="2.8"/>
+                                        </svg>
+                                    </span></button>
+                                    <span class="pQNumSpan"><input class="pQNumInput" type="number" value="1"></span>
+                                    <button class="productQuantityChanger Plus"><span>
+                                        <svg width="15" height="15" viewBox="0 0 20 20">
+                                            <line x1="2" y1="10" x2="18" y2="10" stroke="black" stroke-width="3"/>
+                                            <line x1="10" y1="2" x2="10" y2="18" stroke="black" stroke-width="3"/>
+                                        </svg>
+                                    </span></button>
+                                </div>
+                                <button class="newCartBtn animateBtn"><i class="fa-solid fa-cart-shopping fa-1x"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="productCard" id="5">
+                        <div class="productData">
+                            <div class="imgContainer">
+                                <img class="productImg img" src="./images/products/05_Matchbox_auto.jpg" alt="Matchbox autó">
+                            </div>
+                            <div class="productText">
+                                <div class="productName">Matchbox autó</div>
+                                <div class="productPrice">995</div>
+                            </div>
+                            <div class="newproductNav">
+                                <div class="productQuantity">
+                                    <button class="productQuantityChanger Minus"><span>
+                                        <svg width="15" height="15" viewBox="0 0 20 20">
+                                            <line x1="3" y1="10" x2="17" y2="10" stroke="black" stroke-width="2.8"/>
+                                        </svg>
+                                    </span></button>
+                                    <span class="pQNumSpan"><input class="pQNumInput" type="number" value="1"></span>
+                                    <button class="productQuantityChanger Plus"><span>
+                                        <svg width="15" height="15" viewBox="0 0 20 20">
+                                            <line x1="2" y1="10" x2="18" y2="10" stroke="black" stroke-width="3"/>
+                                            <line x1="10" y1="2" x2="10" y2="18" stroke="black" stroke-width="3"/>
+                                        </svg>
+                                    </span></button>
+                                </div>
+                                <button class="newCartBtn animateBtn"><i class="fa-solid fa-cart-shopping fa-1x"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="productCard" id="6">
+                        <div class="productData">
+                            <div class="imgContainer">
+                                <img class="productImg img" src="./images/products/05_Matchbox_auto.jpg" alt="Matchbox autó">
+                            </div>
+                            <div class="productText">
+                                <div class="productName">Matchbox autó</div>
+                                <div class="productPrice">995</div>
+                            </div>
+                            <div class="newproductNav">
+                                <div class="productQuantity">
+                                    <button class="productQuantityChanger Minus"><span>
+                                        <svg width="15" height="15" viewBox="0 0 20 20">
+                                            <line x1="3" y1="10" x2="17" y2="10" stroke="black" stroke-width="2.8"/>
+                                        </svg>
+                                    </span></button>
+                                    <span class="pQNumSpan"><input class="pQNumInput" type="number" value="1"></span>
+                                    <button class="productQuantityChanger Plus"><span>
+                                        <svg width="15" height="15" viewBox="0 0 20 20">
+                                            <line x1="2" y1="10" x2="18" y2="10" stroke="black" stroke-width="3"/>
+                                            <line x1="10" y1="2" x2="10" y2="18" stroke="black" stroke-width="3"/>
+                                        </svg>
+                                    </span></button>
+                                </div>
+                                <button class="newCartBtn animateBtn"><i class="fa-solid fa-cart-shopping fa-1x"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
@@ -525,7 +319,6 @@
             <h6 id="contactData">All rights reserved.</h6>
         </div>
     </footer>
-
     <script src="./scripts/main.js"></script>
     <script src="./scripts/navbar.js"></script>
     <script src="./scripts/products.js"></script>

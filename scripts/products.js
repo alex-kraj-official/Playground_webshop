@@ -8,6 +8,28 @@ let cartFinValValValue = parseInt(localStorage.getItem("cartFinValValValue")); /
 
 displayCurrencyHomePage(); //display the currency after unit price values
 
+const pQNumInput = document.getElementsByClassName("pQNumInput");
+for (let input of pQNumInput) {
+    input.addEventListener('dblclick', function () {
+        // Csak kijelölés, de ne módosítsuk a szöveget
+        this.select();
+
+        // Kijelöljük a legközelebbi termék kártyát
+        let productCard = this.closest(".productCard");
+        let productNav = productCard.querySelector(".productQuantity");
+        let qElement = productNav.querySelector(".pQNumInput");
+
+        // A qElement textContent-jét beállítjuk a value-ra
+        // Ha ez az első kattintás, akkor a textContent beállítása nem módosítja az értéket
+        qElement.setAttribute('data-value', String(qElement.textContent)); // Tároljuk el a kezdeti értéket
+
+        // A textContent frissítése, és a qElement.value beállítása
+        qElement.textContent = qElement.value;  // A szöveg nem változik, csak a value frissül
+        qElement.setAttribute('data-value', qElement.value); // A value frissítése
+        addedQuantity = qElement.value;
+    });
+}
+
 //Display the currency after unit price values
 function displayCurrencyHomePage(){
     let productPriceElements = document.getElementsByClassName("productPrice"); //get all unit price of the products
@@ -23,10 +45,9 @@ for (let btn of intoCartBtns){
 
         //Reset the quantity number of the added product
         let productNav = productCard.querySelector(".productQuantity"); //get the productNav section of the clicked minus button
-        let qElement = productNav.querySelector(".productQuantityNumText"); //get the element which contains the displayed quantity of the product
-        let qProdQuantity = parseInt(qElement.textContent); //store the textContent of the element which contains the displayed quantity of the product as a number
-        qProdQuantity = 1; //reset the quantity number to 1
-        qElement.textContent = qProdQuantity; //display the new quantity after clicking the cart button
+        let qElement = productNav.querySelector(".pQNumInput"); //get the element which contains the displayed quantity of the product
+        let qProdQuantity = parseInt(qElement.value); //store the textContent of the element which contains the displayed quantity of the product as a number
+        addedQuantity = qProdQuantity;
 
         //Get the data of the added product
         let intoCartProdId = productCard.id; //store the id of the clicked product
@@ -48,6 +69,9 @@ for (let btn of intoCartBtns){
             };
         }
 
+        qProdQuantity = 1; //reset the quantity number to 1
+        qElement.value = qProdQuantity; //display the new quantity after clicking the cart button
+
         cartSumValValValue += intoCartProdPrice * addedQuantity;
         cartFinValValValue += intoCartProdPrice * addedQuantity;
         localStorage.setItem("cartSumValValValue", cartSumValValValue);
@@ -63,10 +87,10 @@ for (let btn of intoCartBtns){
 for (let btn of minusQuantityBtns){
     btn.onclick = function(){
         let productNav = this.closest(".productQuantity"); //get the productNav section of the clicked minus button
-        let qElement = productNav.querySelector(".productQuantityNumText"); //get the element which contains the displayed quantity of the product
-        let qProdQuantity = parseInt(qElement.textContent); //store the textContent of the element which contains the displayed quantity of the product as a number
+        let qElement = productNav.querySelector(".pQNumInput"); //get the element which contains the displayed quantity of the product
+        let qProdQuantity = parseInt(qElement.value); //store the textContent of the element which contains the displayed quantity of the product as a number
         qProdQuantity = Math.max(1, qProdQuantity - 1); //the quantity number equals the previous quantity - 1 and can't be less than 1
-        qElement.textContent = qProdQuantity; //display the new quantity after clicking the minus button
+        qElement.value = qProdQuantity; //display the new quantity after clicking the minus button
         //addedQuantity declared at (in this) products.js:3
         addedQuantity = qProdQuantity; //store the new quantity number to get the added quantity number of the product when added to the cart
     }
@@ -76,10 +100,10 @@ for (let btn of minusQuantityBtns){
 for (let btn of plusQuantityBtns){
     btn.onclick = function(){
         let productNav = this.closest(".productQuantity"); //get the productNav section of the clicked minus button
-        let qElement = productNav.querySelector(".productQuantityNumText"); //get the element which contains the displayed quantity of the product
-        let qProdQuantity = parseInt(qElement.textContent); //store the textContent of the element which contains the displayed quantity of the product as a number
+        let qElement = productNav.querySelector(".pQNumInput"); //get the element which contains the displayed quantity of the product
+        let qProdQuantity = parseInt(qElement.value); //store the textContent of the element which contains the displayed quantity of the product as a number
         qProdQuantity += 1; //the quantity number equals the previous quantity + 1
-        qElement.textContent = qProdQuantity; //display the new quantity after clicking the minus button
+        qElement.value = qProdQuantity; //display the new quantity after clicking the minus button
         //addedQuantity declared at (in this) products.js:3
         addedQuantity = qProdQuantity; //store the new quantity number to get the added quantity number of the product when added to the cart
     }

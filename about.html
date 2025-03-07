@@ -4,35 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" id="icon">
-    <title>Playground webshop - Rólunk</title>
+    <title>Rólunk</title>
     <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/navbar/navbar-primary.css">
+    <link rel="stylesheet" href="./styles/navbar/navbar-secondary.css">
+    <link rel="stylesheet" href="./styles/navbar/cart_btn.css">
+    <link rel="stylesheet" href="./styles/navbar/login_btn.css">
     <link rel="stylesheet" href="./styles/about.css">
     <link rel="stylesheet" href="./assets/fontawesome-free-6.7.2-web/css/all.min.css">
 </head>
 <body>
     <header>
-        <h1 id="homeTitle">Playground webshop</h1>
+        <nav class="navbar--primary">
+            <ul>
+                <li class="navbar--primary_li" id="navbar--primary_li-home">
+                    <a href="" id="home-link">
+                        <span id="home_logo-span">
+                            <img id="home_logo-img" src="./images/favicon2.png">
+                        </span>
+                        <span id="home_title-txt">layground webshop</span>
+                    </a>
+                </li>
+                <li id="navbar--primary_filler-li"></li>
+                <li class="navbar--primary_li" id="navbar--primary_li-cart">
+                    <a href="" class="navbar--primary_a" id="cart-link">
+                        <span id="cart_IconandCounter">
+                            <span id="cartCounter_span"><span id="cartCounter"></span></span>
+                            <i class="fa-solid fa-cart-shopping fa-1x" id="cartIcon"></i>
+                        </span>
+                        <span id="cartTxt">Kosár</span>
+                    </a>
+                </li>
+                <li class="navbar--primary_li" id="navbar--primary_li-user">
+                    <a href="" class="navbar--primary_a" id="login-link">
+                        <i class="fa-solid fa-user" id="userIcon"></i>
+                        <span>Bejelentkezés</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <nav class="navbar--secondary">
+            <ul>
+                <!--<li class="navItem"><a href="" id="home-link">Kezdőlap</a></li>-->
+                <li><a href="" id="about-link">Rólunk</a></li>
+                <li><a href="" id="products-link">Termékek</a></li>
+                <li><a href="" id="contact-link">Elérhetőség</a></li>
+            </ul>
+        </nav>
     </header>
-    <nav class="navbar">
-        <ul>
-            <li><a href="" class="navItem" id="home-link">Kezdőlap</a></li>
-            <li><a href="" class="navItem" id="about-link">Rólunk</a></li>
-            <li><a href="" class="navItem" id="products-link">Termékek</a></li>
-            <li><a href="" class="navItem" id="contact-link">Elérhetőség</a></li>
-            <li>
-                <a href="" class="navItem" id="cart-link">
-                    <span id="cartCounter"></span>
-                    <i class="fa-solid fa-cart-shopping fa-1x" id="cartIcon"></i>
-                </a>
-            </li>
-        </ul>
-    </nav>
     <main>
         <video playisinline autoplay muted loop poster id="myVideo">
             <source src="./images/background.mp4" type="video/mp4">
         </video>
         <div class="bgVideo">
-            <div class="mainHead">
+            <div class="mainHeadd">
                 <div class="pageTitle">Rólunk</div>
             </div>
             <div class="aboutMainContent"></div>

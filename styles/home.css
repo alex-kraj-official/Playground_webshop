@@ -1,9 +1,6 @@
-#moreProductsText{
-    font-size: 1.5em;
-}
 .homeMainContent{
     height: 300vh;
     padding: 0;
-    margin-right: 10vw;
-    margin-left: 10vw;
+    margin-right: 5vw;
+    margin-left: 20vw;
 }

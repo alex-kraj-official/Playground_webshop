@@ -12,7 +12,8 @@ function setNavLinks(){
         about: `${dot}/about.html`,
         products: `${dot}/products.html`,
         contact: `${dot}/contact.html`,
-        cart: `${dot}/cart.html`
+        cart: `${dot}/cart.html`,
+        login: `${dot}/login.html`
     };
     //set the correct navLinks
     document.getElementById("home-link").href = navLinks.home;
@@ -20,4 +21,5 @@ function setNavLinks(){
     document.getElementById("products-link").href = navLinks.products;
     document.getElementById("contact-link").href = navLinks.contact;
     document.getElementById("cart-link").href = navLinks.cart;
+    document.getElementById("login-link").href = navLinks.login;
 }

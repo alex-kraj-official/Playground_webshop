@@ -44,7 +44,7 @@ function updateCartCounterMain(){
         cartCounter.textContent = cartCounterValue; //display the number of the added items on the navbar
     }
     else{ //if there is NOT any item in the cart (it's empty)
-        cartCounter.textContent = ""; //hide the number of the added items on the navbar
+        cartCounter.textContent = "0"; //hide the number of the added items on the navbar
     }
 }
 

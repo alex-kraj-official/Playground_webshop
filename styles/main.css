@@ -1,130 +1,108 @@
+:root {
+    --purple: hsl(276, 72%, 45%);
+    --purple-hover: hsl(276, 72%, 70%);
+    --blue: hsl(203, 100%, 50%);
+    --blue-hover: hsl(203, 100%, 80%);
+    --green: hsl(174, 97%, 60%);
+    --green-hover: hsl(174, 97%, 85%);
+    --white: hsl(0, 0%, 100%);
+}
 *{
     box-sizing: border-box;
 }
 body{
     display: flex;
     flex-direction: column;
-    padding: 0;
+    
     margin: 0;
+    padding: 0;
 
-    height: 100%;
     width: 100%;
+    height: 100%;
+
+    background: hsl(276, 72%, 97%);
 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+h1{
+    text-align: center;
+
+    margin: 0;
+    padding: 0;
+}
+h2, h3, h4, h5, h6{
+    margin: 0;
+    padding: 0;
+}
 #myVideo {
     object-fit: cover;
     object-position: center top;
     position: fixed;
+
     top: 0;
     left: 0;
+
     width: 100vw;
     height: 100vh;
+
     z-index: -1;
     overflow: hidden;
 }
 header{
-    padding: 0;
-    margin: 0;
-    background-color: hsl(0, 0%, 100%);
-}
-h1{
-    padding: 0;
-    margin: 0;
-
-    text-align: center;
-}
-#homeTitle{
-    padding: 23px;
-    margin: 0;
-
-    text-align: center;
-
-    font-size: 2.5em;
-    font-weight: bold;
-}
-h2, h3, h4, h5, h6{
-    padding: 0;
-    margin: 0;
-}
-.navbar{
     position: sticky;
     top: 0;
-    padding: 0;
-    margin: 0;
     z-index: 1;
-
-    background: hsl(215, 70%, 48%);
-}
-.navbar ul{
     overflow: hidden;
-    padding-left: 10vw;
-    margin: 0;
-    
-    color: hsl(0, 0%, 100%);
 
-    list-style-type: none;
-}
-.navbar li{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0;
     padding: 0;
-    margin-top: 0%;
-    margin-right: 0%;
-    margin-bottom: 0%;
-    margin-left: 7vw;
 
-    float: left;
-
-    background: hsl(215, 70%, 48%);
-
-    text-align: center;
-
-    transition: 0.8 ease-in-out;
-}
-.navbar li:hover{
-    background-color: hsl(215, 64%, 58%);
-    transition: 0.5s;
-}
-.navbar a{
-    display: block;
-    padding-top: 10%;
-    padding-right: 10%;
-    padding-bottom: 10%;
-    padding-left: 10%;
-    margin: 0;
-
-    color: hsl(0, 0%, 100%);
-
-    text-decoration: none;
-}
-.navItem{
-    width: 8vw;
-
-    text-align: center;
-}
-#cartIcon{
-    position: relative;
-    margin-left: 5px;
+    background: hsl(0, 0%, 98%);
+    border-bottom: 1px solid hsl(0, 0%, 85%);
 }
 main{
     flex: 1;
+
     height: 180vh;
-    padding: 0;
+
     margin: 0;
+    padding: 0;
 }
 .mainHead{
     position: relative;
 
     display: flex;
     flex-direction: column;
+
     height: 30vh;
-    padding: 0;
+
     margin: 0;
+    padding: 0;
     
     opacity: 1;
-    background-color: hsl(0, 0%, 100%);
+    background-color: white;
+}
+.mainHeadd{
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    height: 7.5vh;
+
+    margin: 0;
+    padding: 0;
+    
+    opacity: 1;
+    background-color: white;
 }
 .pageTitle{
     text-align: center;
@@ -135,21 +113,25 @@ main{
 .footer{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+
     width: 100%;
     min-height: 10vh;
-    padding: 0;
-    margin: 0;
 
-    text-align: center;
+    margin: 0;
+    padding: 0;
     
     opacity: 1;
-    background: hsl(215, 70%, 48%);
+    background: var(--purple);
 }
 .contactInfo{
-    text-align: center;
     padding: 10px;
-    opacity: 1;
+
     color: hsl(0, 0%, 100%);
+
+    opacity: 1;
 }
 #contactData{
     padding-top: 0.5vh;

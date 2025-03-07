@@ -1,0 +1,42 @@
+.productsPageNum{
+    text-align: center;
+    height: 27px;
+
+    font-size: 1.5em;
+}
+.pagination{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    text-align: center;
+
+    margin-bottom: 50px;
+}
+#moreProductsText{
+    font-size: 1.5em;
+}
+.pagination a{
+    display: inline-block;    
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    margin-left: 5px;
+
+    background: hsl(215, 70%, 48%);
+    color: hsl(0, 0%, 100%);
+
+    font-weight: bold;
+    text-decoration: none;
+
+    transition: 0.5s ease-in-out;
+}
+.pagination a:hover{
+    background: hsl(215, 70%, 70%);
+    transition: 0.3s;
+}
+.pagination a#activeProductPage{
+    background: hsl(215, 70%, 25%);
+}

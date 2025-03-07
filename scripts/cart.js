@@ -96,7 +96,7 @@ function displayCartItems() {
                         <button class="cartProdQBtn cartMinusBtn">
                             <div class="cartProdQBtnTxt">
                                 <svg width="15" height="15" viewBox="0 0 20 20">
-                                    <line x1="3" y1="10" x2="17" y2="10" stroke="black" stroke-width="2.8"/>
+                                    <line x1="3" y1="10" x2="17" y2="10" stroke-width="2.8"/>
                                 </svg>
                             </div>
                         </button>
@@ -106,8 +106,8 @@ function displayCartItems() {
                         <button class="cartProdQBtn cartPlusBtn">
                             <div class="cartProdQBtnTxt">
                                 <svg width="15" height="15" viewBox="0 0 20 20">
-                                    <line x1="2" y1="10" x2="18" y2="10" stroke="black" stroke-width="3"/>
-                                    <line x1="10" y1="2" x2="10" y2="18" stroke="black" stroke-width="3"/>
+                                    <line x1="2" y1="10" x2="18" y2="10" stroke-width="3"/>
+                                    <line x1="10" y1="2" x2="10" y2="18" stroke-width="3"/>
                                 </svg>
                             </div>
                         </button>
