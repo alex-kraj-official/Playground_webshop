@@ -40,7 +40,7 @@
                 <li class="navbar--primary_li" id="navbar--primary_li-user">
                     <a href="" class="navbar--primary_a" id="login-link">
                         <i class="fa-solid fa-user" id="userIcon"></i>
-                        <span>Bejelentkezés</span>
+                        <span id="loginTxt">Bejelentkezés</span>
                     </a>
                 </li>
             </ul>
@@ -105,8 +105,8 @@
             { id: 20,   altid: 0,    price: "3995", title: "Uno No Mercy"        , img: "./images/products/00_Uno_No_Mercy.png"      },
             { id: 21,   altid: 1,    price: "7495", title: "Sonic figura"        , img: "./images/products/01_Sonic_figura.jpg"      },
             { id: 22,   altid: 2,    price: "4995", title: "Gazdálkodj okosan"   , img: "./images/products/02_Gazdalkodj_okosan.png" },
-            { id: 23,   altid: 3,    price: "2995", title: "Búgócsiga"           , img: "./images/products/03_Bugocsiga.png"         },
-            { id: 24,   altid: 4,    price: "2395", title: "Magyar rendőrautó"   , img: "./images/products/04_Magyar_rendorauto.png" }
+            { id: 23,   altid: 3,    price: "2995", title: "Búgócsiga"           , img: "./images/products/03_Bugocsiga.png"         }//,
+            //{ id: 24,   altid: 4,    price: "2395", title: "Magyar rendőrautó"   , img: "./images/products/04_Magyar_rendorauto.png" }
         ];
 
         // URL paraméterek kinyerése
@@ -116,7 +116,7 @@
         document.title = `Termékek - ${pageNum}. oldal`;
 
         // Termékek szűrése az aktuális oldalszám alapján
-        const productsPerPage = 5;
+        const productsPerPage = 4;
         const startIdx = (pageNum - 1) * productsPerPage;
         const endIdx = pageNum * productsPerPage;
         const currentPageProducts = products.slice(startIdx, endIdx);
@@ -134,21 +134,26 @@
                         <div class="productPrice">${product.price}</div>
                     </div>
                     <div class="newproductNav">
-                        <div class="productQuantity">
-                            <button class="productQuantityChanger Minus"><span class="productQuantityChangerText">
-                                <svg width="15" height="15" viewBox="0 0 20 20">
-                                    <line x1="3" y1="10" x2="17" y2="10" stroke="black" stroke-width="2.8"/>
-                                </svg>
-                            </span></button>
-                            <span class="pQNumSpan"><input class="pQNumInput" type="number" value="1"></span>
-                            <button class="productQuantityChanger Plus"><span class="productQuantityChangerText">
-                                <svg width="15" height="15" viewBox="0 0 20 20">
-                                    <line x1="2" y1="10" x2="18" y2="10" stroke="black" stroke-width="3"/>
-                                    <line x1="10" y1="2" x2="10" y2="18" stroke="black" stroke-width="3"/>
-                                </svg>
-                            </span></button>
+                        <div class="fillerpNav"></div>
+                        <div class="newproductNavIn">
+                            <div class="productQuantity">
+                                <button class="productQuantityChanger Minus">
+                                    <svg width="15" height="15" viewBox="0 0 20 20">
+                                        <line x1="3" y1="10" x2="17" y2="10" stroke="black" stroke-width="2.8"/>
+                                    </svg>
+                                </button>
+                                <span class="pQNumSpan"><input class="pQNumInput" type="number" value="1"></span>
+                                <button class="productQuantityChanger Plus">
+                                    <svg width="15" height="15" viewBox="0 0 20 20">
+                                        <line x1="2" y1="10" x2="18" y2="10" stroke="black" stroke-width="3"/>
+                                        <line x1="10" y1="2" x2="10" y2="18" stroke="black" stroke-width="3"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="productCart">
+                                <button class="newCartBtn animateBtn"><i class="fa-solid fa-cart-shopping fa-1x"></i></button>
+                            </div>
                         </div>
-                        <button class="newCartBtn animateBtn"><i class="fa-solid fa-cart-shopping fa-1x"></i></button>
                     </div>
                 </div>
             </div>
