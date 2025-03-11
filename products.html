@@ -47,7 +47,6 @@
         </nav>
         <nav class="navbar--secondary">
             <ul>
-                <!--<li class="navItem"><a href="" id="home-link">Kezdőlap</a></li>-->
                 <li><a href="" id="about-link">Rólunk</a></li>
                 <li><a href="" id="products-link">Termékek</a></li>
                 <li><a href="" id="contact-link">Elérhetőség</a></li>
@@ -62,7 +61,10 @@
             <div class="mainHead">
                 <div class="pageTitle">Termékek</div><br>
                 <div class="productsPageNum" id="pageNum"></div>
-                <div class="pagination" id="paginationMain"></div>
+                <div id="paginationDiv">
+                    <div id="moreProductsText">További termékek:</div>
+                    <div class="pagination" id="paginationMain"></div>
+                </div>
             </div>
             <div class="productsMainContent" id="productsContent">
                 <div class="productRow" id="productRow"></div>
@@ -151,7 +153,7 @@
                                 </button>
                             </div>
                             <div class="productCart">
-                                <button class="newCartBtn animateBtn"><i class="fa-solid fa-cart-shopping fa-1x"></i></button>
+                                <button class="newCartBtn animateBtn"><i class="fa-solid fa-cart-shopping fa-1x pCardShoppingCartIcon"></i></button>
                             </div>
                         </div>
                     </div>
@@ -164,7 +166,7 @@
 
         // Pagination
         const totalPages = Math.ceil(products.length / productsPerPage);
-        let paginationHTML = `<div id="moreProductsText">További termékek:</div><br>`;
+        let paginationHTML = ``;
         for (let i = 1; i <= totalPages; i++) {
             if (i == pageNum){
                 paginationHTML += `<a href="products.html?page=${i}" class="paginationItem" id="activeProductPage">${i}</a>`;

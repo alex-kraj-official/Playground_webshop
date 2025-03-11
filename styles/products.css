@@ -7,8 +7,7 @@
 }
 .productsMainContent{
     max-width: 100%;
-    min-height: 5vh;
-    max-height: 170vh;
+    height: 170vh;
 
     margin-right: 10vw;
     margin-left: 25vw;

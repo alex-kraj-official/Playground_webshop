@@ -1,11 +1,12 @@
 button, i{
     margin: 0;
-    padding: 0;
+
     border: none;
     outline: none;
 }
 .productCard{
     flex: 1;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -15,13 +16,15 @@ button, i{
     height: 100%;
 
     margin-left: 1vw;
+    padding: 0;
     
     background-color: white;
     border-radius: 10px;
     box-shadow: 0px 0px 10px hsl(0, 0%, 0%, 0.5);
 }
 .productCard:first-child{
-    margin-left: 0vw;
+    margin: 0;
+    padding: 0;
 }
 .productData{
     display: flex;
@@ -35,30 +38,22 @@ button, i{
     height: 100%;
 
     margin: 0;
-    padding: 5px;
+    padding: 0.5vh 0.25vw;
     /*padding: 0.5447vh 0.2604vw;*/
 
     border: none;
     border-radius: 10px;
 }
-/*
-.productData:hover{
-    padding: 0;
-    border-width: 0.54vh 0.26vw;
-    border-style: solid;
-    border-color: var(--purple);
-}
-*/
 .imgContainer{
     flex: 5;
+
     display: flex;
     justify-content: center;
     align-items: center;
 
     width: 100%;
 
-    margin-right: 0.2604vw;
-    margin-left: 0.2604vw;
+    margin: 0 0.2604vw;
 }
 .productImg{
     width: 13vw;
@@ -75,19 +70,20 @@ button, i{
 }
 .productText{
     flex: 3;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    text-align: flex-start;
 
     width: 100%;
 
-    margin: 0vh 0.2604vw;
+    margin: 0 0.2604vw;
     padding: 0;
 }
 .productName{
     flex: 1;
+
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
@@ -100,6 +96,7 @@ button, i{
 }
 .productPrice{
     flex: 1;
+
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -114,6 +111,7 @@ button, i{
 /*-----------------------------------------------------------*/
 .newproductNav{
     flex: 2;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -121,12 +119,12 @@ button, i{
 
     width: 100%;
 
-    margin-right: 0.2604vw;
-    margin-left: 0.2604vw;
+    margin: 0 0.2604vw;
     padding: 0;
 }
 .fillerpNav{
     flex: 9;
+
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -140,6 +138,7 @@ button, i{
 }
 .newproductNavIn{
     flex: 1;
+
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -153,11 +152,11 @@ button, i{
 }
 .productQuantity{
     flex: 8;
+
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    text-align: center;
 
     height: auto;
 
@@ -172,10 +171,10 @@ button, i{
 }
 .productQuantityChanger{
     flex: 2;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
     flex-wrap: wrap;
 
     width: 100%;
@@ -204,10 +203,10 @@ button, i{
 }
 .pQNumSpan{
     flex: 6;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
     flex-wrap: wrap;
 
     height: auto;
@@ -242,14 +241,13 @@ button, i{
 .pQNumInput::-webkit-inner-spin-button,
 .pQNumInput::-webkit-inner-spin-button{
     -webkit-appearance: none;
-    -moz-appearance: textfield;
 }
 .productCart{
     flex: 2;
+
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    text-align: center;
     
     width: 100%;
     height: 100%;
@@ -264,7 +262,6 @@ button, i{
     justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
-    text-align: center;
 
     width: 100%;
     height: 100%;
@@ -288,11 +285,10 @@ button, i{
     background: var(--green-hover);
     box-shadow: 0px 0px 5px;
 }
-.fa-cart-shopping{
+.pCardShoppingCartIcon{
     display: flex;
     justify-content: center;
     align-content: center;
-    text-align: center;
 
     width: 100%;
     height: auto;
